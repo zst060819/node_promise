@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成器</title>
+</head>
+<body>
+    <script>    
+        //生成器函数  * 的位置只要在function 与函数名之间即可
+        function * gen(){
+            //1. 生成器函数内部可以写普通代码
+            console.log("测试-1");
+            yield "怎么样，士道君"; // yield (表达式)
+            //3. yield 是函数代码的分隔符 
+            console.log("测试-2");
+            yield "四糸乃很酷吧，四糸乃很酷吧";
+            console.log("测试-3");
+        }
+
+        //调用生成器函数   2. gen调用以后代码不会立即执行
+        let iterator = gen();
+
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        
+
+    </script>
+</body>
+</html>

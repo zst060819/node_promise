@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象声明</title>
+</head>
+
+<body>
+    <script>
+        // // 通过构造函数创建对象
+        // function Phone(brand, price) {
+        //     //属性初始化
+        //     this.brand = brand;
+        //     this.price = price;
+        // }
+        // // 设置方法  金秀贤  宋仲基
+        // Phone.prototype.call = function (someone) {
+        //     console.log(`我可以给${someone}打电话`);
+        // }
+        // // 
+        // let chuizi = new Phone('锤子', 2499);
+
+        // chuizi.call('赵丽颖');
+
+        
+        // 声明一个类
+        class Phone{
+            //构造方法 1. 构造方法的名字是固定的
+            constructor(brand, price){
+                this.brand = brand;
+                this.price = price;
+            }    
+
+            //声明方法
+            call(someone){
+                console.log(`我可以给${someeone}打电话!!`);
+            }
+        }
+
+        //实例化对象
+        let nokia = new Phone('诺基亚',230);
+
+        console.log(nokia);
+
+
+    </script>
+</body>
+
+</html>

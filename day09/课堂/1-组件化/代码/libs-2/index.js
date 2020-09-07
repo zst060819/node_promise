@@ -1,0 +1,1 @@
+module.exports = "index.js 的默认寻找";

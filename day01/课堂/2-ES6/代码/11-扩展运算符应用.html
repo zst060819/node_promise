@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扩展运算符应用</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+        //1. 数组的合并 
+        // const kuaizi = ['肖央','王太利'];
+        // const fenghuang = ['曾毅','玲花'];
+        // //数组合并
+        // const zuixuan = [...kuaizi, ...fenghuang];
+        // console.log(zuixuan);
+
+        //2. 新数组克隆
+        // let arr = ['苏有朋','陈志朋','吴奇隆'];
+        // let newArr = [...arr];
+        // console.log(newArr);
+
+        //3. 将伪数组转为真正的数组
+        let divs = document.getElementsByTagName('div');
+        let result = [...divs];
+
+        console.log(divs);
+        console.log(result);
+        
+    </script>
+</body>
+</html>

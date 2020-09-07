@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>回调</title>
+</head>
+<body>
+    <script>
+        //同步回调
+        // const arr = [1,2,3,4,5];
+
+        // const newArr = arr.map(item => {
+        //     console.log(1);
+        //     return item * 10;
+        // });
+
+        // console.log(2);
+        // console.log(newArr);
+
+        //异步回调
+        // setTimeout(()=>{
+        //     console.log(1);
+        // }, 1000);
+        // console.log(2);
+
+
+        // x.onreadystatechange = function(){
+        //     console.log(x.response);
+        //     console.log(1);
+        // }
+
+        // console.log(2);
+
+        fs.readFile("./1.html", (err, data)=>{
+            console.log(1);
+        })
+        console.log(2);
+        
+
+    </script>
+</body>
+</html>

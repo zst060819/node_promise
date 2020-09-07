@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>递归实现深拷贝 - 思路</title>
+</head>
+
+<body>
+    <script>
+        // 
+        let school = {
+            name: '尚硅谷',
+            xueke: ['前端','Java','大数据','运维'],
+            //创始人
+            founder: {
+                name:"刚哥",
+                age: 45
+            },
+            change: function(){
+                console.log("我可以改变你们");
+            }
+        };
+
+        //
+        let newSchool = {};
+        //基本数据类型值的拷贝
+        newSchool.name = school.name;
+        //数组  创建一个容器
+        newSchool.xueke = [];
+        newSchool.xueke[0] = school.xueke[0];
+        newSchool.xueke[1] = school.xueke[1];
+        newSchool.xueke[2] = school.xueke[2];
+        newSchool.xueke[3] = school.xueke[3];
+        //对象
+        newSchool.founder = {};
+        newSchool.founder.name = school.founder.name;
+        newSchool.founder.age = school.founder.age;
+        //函数
+        newSchool.change = school.change;
+        // newSchool.change = school.change.bind(newSchool);
+        
+        console.log(school);
+        console.log(newSchool);
+
+    </script>
+</body>
+
+</html>

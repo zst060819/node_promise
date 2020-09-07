@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击 DIV 换色</title>
+    <link crossorigin="anonymous" href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+        rel="stylesheet">
+    <style>
+        .item {
+            width: 100px;
+            height: 50px;
+            border: solid 1px rgb(42, 156, 156);
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="page-header">点击切换颜色</h2>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <script>
+        //统一获取 div 元素对象
+        let items = document.getElementsByClassName('item');
+
+        //遍历绑定事件 ES5 模拟实现
+        for (var i = 0; i < items.length; i++) {
+            (function (index) {
+                //遍历绑定事件
+                items[index].onclick = function () {
+                    //修改元素的背景颜色
+                    // this.style.background = 'pink';
+                    items[index].style.background = 'pink';
+                }
+            })(i);
+        }
+
+        //使用 let 事件
+        // for(let i=0;i<items.length;i++){
+        //     //遍历绑定事件
+        //     items[i].onclick = function(){
+        //         //修改元素的背景颜色
+        //         // this.style.background = 'pink';
+        //         items[i].style.background = 'pink';
+        //     }
+        // }
+
+        // {
+        //     let i = 0;
+        //     items[i].onclick = function(){
+        //         //修改元素的背景颜色
+        //         // this.style.background = 'pink';
+        //         items[i].style.background = 'pink';
+        //     }
+        // }
+        // {
+        //     let i = 1;
+        //     items[i].onclick = function(){
+        //         //修改元素的背景颜色
+        //         // this.style.background = 'pink';
+        //         items[i].style.background = 'pink';
+        //     }
+        // }
+        // {
+        //     let i = 2;
+        //     items[i].onclick = function(){
+        //         //修改元素的背景颜色
+        //         // this.style.background = 'pink';
+        //         items[i].style.background = 'pink';
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

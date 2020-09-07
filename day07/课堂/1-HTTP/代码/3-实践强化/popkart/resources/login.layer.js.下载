@@ -1,0 +1,1187 @@
+var LoginLayer = {
+    "BodyHtml": '<div id="TcLogin_Layer"><div class="container clearfix">\
+                <div class="aside">\
+                    <h2>用 <span>天成账号管家</span> 扫二维码登录安全又方便</h2>\
+                    <div class="qrcode">\
+                        <img src="" alt="">\
+                    </div>\
+                    <div class="btns">\
+                        <a href="https://sec.tiancity.com/homepage/" target="_blank" class="btn downloadBtn">安装天成管家</a>\
+                    </div>\
+                </div>\
+                <div class="main">\
+                    <h1>世纪天成用户登录<a href="javascript:" class="icon iconClose">关闭</a></h1>\
+                    <!-- 登录框 -->\
+                    <div class="con loginBar fl">\
+                        <div class="accountLogin">\
+                            <ul class="loginNav">\
+                            <li><a href="javascript:" class="on"><i class="icon iconPc"></i>密码登录</a></li>\
+                            <li class="hide"><a href="javascript:" class="on"><i class="icon icoMax"></i>短信验证登录</a></li>\
+                            <li><a href="javascript:" class="btnNavOnekey"><i class="icon iconMobile"></i>一键登录</a></li>\
+                            </ul>\
+                            <!-- 密码登录及验证 -->\
+                            <div class="loginForm" style="display: block">\
+                                <!-- 密码登录 -->\
+                                <ul >\
+                                    <li><input type="text" placeholder="手机/邮箱/普通账号"></li>\
+                                    <li><input type="password" placeholder="静态密码/动态密码"></li>\
+                                    <li class="error hide" title=""><em></em></li>\
+                                    <li class="changeLogin">\
+                                        <a href="javascript:"><i class="icon iconMax2"></i>短信验证登录</a>\
+                                    </li>\
+                                    <li class="btns"><a href="javascript:" class="btn loginBtn">登录</a></li>\
+                                </ul>\
+                                <!-- 算数验证码 -->\
+                                <ul class="mathVerify hide">\
+                                    <li class="msg">请输入验证码的计算结果：</li>\
+                                    <li><input type="text" placeholder="请输入计算结果"></li>\
+                                    <li class="client">\
+                                        <img src="" width="80" height="30" border="0">\
+                                        <span>看不清，<a href="javascript:;">换一张？</a></span>\
+                                    </li>\
+                                    <li class="error hide" title=""><em></em></li>\
+                                    <li class="changeLogin">\
+                                        <a href="javascript:"><i class="icon iconMax2"></i>短信验证登录</a>\
+                                    </li>\
+                                    <li class="btns">\
+                                        <a href="javascript:" class="w150 btn loginBtn">登录</a>\
+                                        <a href="javascript:" class="w150 btn gary cancelBtn">取消</a>\
+                                    </li>\
+                                </ul>\
+                                <!-- 矩阵验证码 -->\
+                                <ul class="matrixVerify hide">\
+                                    <li class="msg">请依次输入密保卡3个坐标上对应的数字：</li>\
+                                    <li><p>B1</p><p>C3</p><p>E5</p></li>\
+                                    <li><input type="text"><input type="text"><input type="text"></li>\
+                                    <li class="error hide" title=""><em></em></li>\
+                                    <li class="changeLogin">\
+                                        <a href="javascript:"><i class="icon iconMax2"></i>短信验证登录</a>\
+                                    </li>\
+                                    <li class="btns">\
+                                        <a href="javascript:" class="w150 btn loginBtn">登录</a>\
+                                        <a href="javascript:" class="w150 btn gary cancelBtn">取消</a>\
+                                    </li>\
+                                </ul>\
+                                <!-- 短信验证码 -->\
+                                <ul class="phoneVerify hide">\
+                                    <li class="msg">请填写手机收到的验证码：</li>\
+                                    <li class="phoneInfo">\
+                                        <p></p>\
+                                        <a href="javascript:" class="getPsw">免费获取验证码</a>\
+                                    </li>\
+                                    <li><input type="text" placeholder="手机/邮箱/普通账号"></li>\
+                                    <li class="error hide" title=""><em></em></li>\
+                                    <li class="changeLogin">\
+                                        <a href="javascript:"><i class="icon iconMax2"></i>短信验证登录</a>\
+                                    </li>\
+                                    <li class="btns">\
+                                        <a href="javascript:" class="w150 btn loginBtn">登录</a>\
+                                        <a href="javascript:" class="w150 btn gary cancelBtn">取消</a>\
+                                    </li>\
+                                </ul>\
+                                <div class="tips">\
+                                    没有账号？ \
+                                    <a href="javascript:" class="registBtn">立即注册</a>&nbsp;|&nbsp;\
+                                    <span style="cursor:pointer">无法登录？</span>\
+                                </div>\
+                            </div>\
+                            <!-- 短信验证登录 -->\
+                            <div class="loginForm hiden">\
+                                    <ul>\
+                                        <li><input type="text" placeholder="手机/邮箱/普通账号"></li>\
+                                        <li>\
+                                            <input type="text" placeholder="输入6位验证码" class="psw">\
+                                            <a href="javascript:" class="getPsw">免费获取验证码</a>\
+                                        </li>\
+                                        <li class="error hide"><em></em></li>\
+                                        <li class="changeLogin">\
+                                            <a href="javascript:"><i class="icon iconMax2"></i>密码登录</a>\
+                                        </li>\
+                                        <li class="btns"><a href="javascript:" class="btn loginBtn">登录</a></li>\
+                                    </ul>\
+                                    <!-- 算数验证码 -->\
+                                    <ul class="mathVerify hide">\
+                                        <li class="msg">请输入验证码的计算结果：</li>\
+                                        <li><input type="text" placeholder="请输入计算结果"></li>\
+                                        <li class="client">\
+                                            <img src="" width="80" height="30" border="0">\
+                                            <span>看不清，<a href="javascript:;">换一张？</a></span>\
+                                        </li>\
+                                        <li class="error hide" title=""><em></em></li>\
+                                        <li class="changeLogin">\
+                                            <a href="javascript:"><i class="icon iconMax2"></i>密码登录</a>\
+                                        </li>\
+                                        <li class="btns">\
+                                            <a href="javascript:" class="w150 btn loginBtn">登录</a>\
+                                            <a href="javascript:" class="w150 btn gary cancelBtn">取消</a>\
+                                        </li>\
+                                    </ul>\
+                                <div class="tips">\
+                                    没有账号？ \
+                                    <a href="javascript:" class="registBtn">立即注册</a>&nbsp;|&nbsp;\
+                                    <span style="cursor:pointer">无法登录？</span>\
+                                </div>\
+                                </div>\
+                            <!-- 一键登录 -->\
+                            <div class="loginForm">\
+                                <ul class="">\
+                                    <li><input type="text" placeholder="绑定APP的手机/邮箱/普通账号"></li>\
+                                    <li class="error hide"><em></em></li>\
+                                    <li class="btns"><a href="javascript:" class="btn loginBtn">登录</a></li>\
+                                </ul>\
+                                <!-- 一键验证码 -->\
+                                <ul class="oneKeyVerify hide">\
+                                    <li><input type="text" placeholder="手机/邮箱/普通账号"></li>\
+                                    <li class="loginCode">登陆确认码：<span></span></li>\
+                                    <li class="error hide" title=""><em></em></li>\
+                                    <li class="btns">\
+                                        <!-- <a href="javascript:" class="w150 btn loginBtn">登录</a> -->\
+                                        <a href="javascript:" class="w150 btn loginBtn wait">等待手机确认<em class="w1"></em><em class="w2"></em><em class="w3"></em></a>\
+                                        <a href="javascript:" class="w150 btn gary cancelBtn">取消</a>\
+                                    </li>\
+                                </ul>\
+                                <div class="tips">\
+                                    没有账号？ \
+                                    <a href="javascript:" class="registBtn">立即注册</a>&nbsp;|&nbsp;\
+                                    <span style="cursor:pointer">无法登录？</span>\
+                                </div>\
+                            </div>\
+                        </div>\
+                        <div class="quickBar hide">\
+                            <p class="menuBar">\
+                                <a href="javascript:" class="backBtn">&lt; 返回登录</a>\
+                            </p>\
+                            <p class="msg">您无法登录可能有多种原因，请参考下方的方法和可能的解决方案。</p>\
+                            <ul class="clearfix">\
+                                <li>\
+                                    <a href="https://aq.tiancity.com/Pwd/ForgotPwd" target="_blank">\
+                                        <i class="btnIcon btnIcon-1"></i>\
+                                        <p>忘记密码</p>\
+                                    </a>\
+                                </li>\
+                                <li>\
+                                    <a href="https://aq.tiancity.com/Account/GetAccount" target="_blank">\
+                                        <i class="btnIcon btnIcon-2"></i>\
+                                        <p>忘记账号</p>\
+                                    </a>\
+                                </li>\
+                                <li>\
+                                    <a href="https://aq.tiancity.com/Home/Index" target="_blank">\
+                                        <i class="btnIcon btnIcon-3"></i>\
+                                        <p>安全工具</p>\
+                                    </a>\
+                                </li>\
+                                <li>\
+                                    <a href="https://aq.tiancity.com/Tool/PhoneSmsChange" target="_blank">\
+                                        <i class="btnIcon btnIcon-4"></i>\
+                                        <p>手机号不用</p>\
+                                    </a>\
+                                </li>\
+                                <li class="mr0">\
+                                    <a href="https://member.tiancity.com/MemberOrder/wn?ot=10005" target="_blank">\
+                                        <i class="btnIcon btnIcon-5"></i>\
+                                        <p>手机号丢失</p>\
+                                    </a>\
+                                </li>\
+                            </ul>\
+                            <p class="tips">都不是我的问题，<a href="https://help.tiancity.com/Home/Chat" target="_blank">联系在线客服</a></p>\
+                        </div>\
+                    </div>\
+                </div>\
+            </div></div>',
+    "Config": {
+        siteid: 9999,
+        regurl: "https://member.tiancity.com/Reg/PlfmRegister/Phone",
+        view: "float",
+        compatiblemobile: true,
+        callback: function () { }
+    },
+    "Format": {
+        "UserId": function (text) {
+            if (text == null || text.length <= 0 ||
+                (!/^[a-zA-Z][a-zA-Z0-9]{3,15}$/.test(text) && !/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(text) && !/^(1)\d{10}$/.test(text))) {
+                return false;
+            }
+            return true;
+        },
+        "Password": function (text) {
+            if (text == null || text.length <= 0 ||
+                (!/^[A-Za-z0-9%+=*^!@#$&()_-]{4,20}$/.test(text))) {
+                return false;
+            }
+            return true;
+        },
+        "Captcha": function (text) {
+            if (text == null || text.length <= 0 ||
+                (!/^[a-zA-Z0-9]{1,6}$/.test(text))) {
+                return false;
+            }
+            return true;
+        },
+        "Matrix": function (text) {
+            if (text == null || text.length <= 0 ||
+                (!/^[a-zA-Z0-9]{2}$/.test(text))) {
+                return false;
+            }
+            return true;
+        },
+        "MatrixSmsCode": function (text) {
+            if (text == null || text.length <= 0 ||
+                (!/^[a-zA-Z0-9]{4,6}$/.test(text))) {
+                return false;
+            }
+            return true;
+        }
+    },
+    "Utility": {
+        "Guid": function () {
+            var S4 = function () {
+                return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+            };
+            return (S4() + S4() + S4() + S4() + S4() + S4() + S4() + S4());
+        },
+        "everyTime": function (interval, fun, cfun, count) {
+            var timer = setInterval(fun, interval * 1000);
+            window.setTimeout(function () {
+                if (timer != null) {
+                    window.clearInterval(timer);
+                }
+                cfun();
+            }, count * 1000);
+        },
+        "LockReq": function () {
+            if (LoginLayer.Utility.Request) {
+                return true;
+            }
+            else {
+                LoginLayer.Utility.Request = true;
+                return false;
+            }
+        },
+        "UnLockReq": function () {
+            LoginLayer.Utility.Request = false;
+            return true;
+        },
+        "LockClick": function (obj) {
+            if ($(obj).attr('clk') == 'true') {
+                return true;
+            }
+            $(obj).attr('clk', 'true');
+            return false;
+        },
+        "UnLockClick": function (obj) {
+            $(obj).attr('clk', '');
+            return true;
+        },
+        "timer": null,
+        "qrtimer": 0,
+        "Request": false
+    },
+    "Params": function () { },
+    "Event": function () {
+
+        var frame = $('#TcLogin_Layer');
+
+        var Reset = function () {
+            //var frame = $('#TcLogin_Layer .accountLogin .loginForm');
+            $('input', frame).val('');
+            $('.error', frame).text('').hide();
+            $('.getPsw', frame).attr('clk', '').text('免费获取验证码');
+            clearInterval(LoginLayer.Utility.timer);
+        };
+
+        $('.accountLogin .loginNav a', frame).each(function (i) {
+            $(this).click(function () {
+                $('.accountLogin .loginNav a', frame).removeClass('on').parent().show().eq(i == 1 ? 0 : 1).hide();
+                $(this).addClass('on');
+                $('.accountLogin .loginForm', frame).hide().eq(i).show().find('ul').siblings('ul').hide().eq(0).show();
+                Reset();
+            });
+        });
+        $('.accountLogin .iconMax2', frame).each(function (i) {
+            $(this).parent().click(function () {
+                $('.accountLogin .loginNav a', frame).removeClass('on').parent().eq(i > 3 ? 1 : 0).hide().siblings().show().eq(0).children('a').addClass('on');
+                $('.accountLogin .loginForm', frame).hide().eq(i > 3 ? 0 : 1).show().find('ul').siblings('ul').hide().eq(0).show();
+                Reset();
+            });
+        });
+        $('.accountLogin .loginForm', frame).each(function (i, o) {
+            $('a.loginBtn', o).each(function (j, e) {
+                $(e).bind('click', function (event) {
+                    if (i == 0) {
+                        LoginLayer.Action.Passport.Login(j, 0);
+                    }
+                    else if (i == 1) {
+                        LoginLayer.Action.Passport.Login(j, 1);
+                    }
+                    else if (i == 2) {
+                        LoginLayer.Action.Button.Push(j);
+                    }
+                });
+            });
+        });
+        $('.accountLogin .loginForm', frame).eq(1).find('a.getPsw').bind('click', function (event) {
+            LoginLayer.Action.Passport.GetSmsDynamic();
+        });
+        $('.accountLogin .loginForm a.cancelBtn', frame).each(function (i) {
+            if (i > 3) return;
+            $(this).bind('click', function (event) {
+                var frame = $('.accountLogin .loginForm').eq(i != 3 ? 0 : 1);
+                $("ul", frame).hide().eq(0).show();
+                Reset();
+            });
+        });
+
+        $('.accountLogin .registBtn', frame).bind('click', function () {
+            window.open(LoginLayer.Config.regurl);
+        });
+
+        $('.accountLogin .tips span', frame).bind('click', function (event) {
+            $('.accountLogin', frame).hide();
+            $('.quickBar', frame).show();
+        });
+
+        $('.quickBar a.backBtn', frame).bind('click', function (event) {
+            $('.accountLogin', frame).show();
+            $('.quickBar', frame).hide();
+        });
+
+        $('.accountLogin input', frame).keypress(function (event) {
+            if (event.keyCode == 13) {
+                $('.loginBtn', $(this).parent().siblings('li')).click();
+            }
+        });
+
+    },
+    "Login": function (options) {
+        this.Config = jQuery.extend(this.Config, options);
+        if (this.Config.view == "float") {
+            jQuery("body").append(this.BodyHtml);
+            jQuery("#TcLogin_Layer").showlayer({
+                closeLayer: {
+                    btn: ".iconClose",
+                    callback: function () {
+                        LoginLayer.Action.QrCode.Cancle();
+                        LoginLayer.Action.Button.Cancle();
+                    }
+                },
+                mover: ".mover",
+                callback: function () {
+                    $('input[type=text]', $('#TcLogin_Layer .loginForm').eq(0)).eq(0).focus();
+                    LoginLayer.Action.QrCode.LoadImage();
+                }
+            });
+        }
+        else {
+            $(this.Config.view).html(this.BodyHtml);
+            $("#TcLogin_Layer").attr('style', 'display:block');
+            $("#TcLogin_Layer a.iconClose").hide();
+            $('input[type=text]', $('#TcLogin_Layer .loginForm').eq(0)).eq(0).focus();
+            LoginLayer.Action.QrCode.LoadImage();
+            $("#TcLogin_Layer a.iconClose").click(function () {
+                LoginLayer.Action.QrCode.Cancle();
+                LoginLayer.Action.Button.Cancle();
+            });
+        }
+        this.Event();
+    },
+    "Logout": function (options) {
+        this.Config = jQuery.extend(this.Config, options);
+        if (LoginLayer.Utility.LockReq()) { return; }
+        jQuery.getJSON("https://passport.tiancity.com/Handle/Logout?jsoncallback=?", { siteid: LoginLayer.Config.siteid }, function (data) {
+            LoginLayer.Utility.UnLockReq();
+            if (data.code == 100) {//注销成功
+                LoginLayer.Config.callback(true, data.code);
+            }
+            else {
+                LoginLayer.Config.callback(false, data.code);
+            }
+        });
+    },
+    "LoginStatus": function () {
+        var arr = document.cookie.match(new RegExp("(^| )TCATTS=([^;]*)(;|$)"));
+        return arr != null;
+    },
+    "Action": {
+        "Passport": {
+            "Login": function (step, logintype) {
+                var pframe = $('.loginForm').eq(logintype == 0 ? 0 : 1);
+                var reqLogin = function (fcq) {
+                    if (LoginLayer.Utility.LockReq()) { return; }
+                    $.getJSON('https://passport.tiancity.com/handle/Login?jsoncallback=?', { FCQ: fcq, cp: LoginLayer.Params.CapValue, st: LoginLayer.Config.siteid, fl: '' }, function (data) {
+                        LoginLayer.Utility.UnLockReq();
+                        clearInterval(LoginLayer.Utility.timer);
+                        if (data.code == 1 || data.code == 13) {
+                            $("#TcLogin_Layer").find('a.iconClose').click();
+                            LoginLayer.Config.callback();
+                            //$('a.cancelBtn', pframe).eq(0).click();
+                            return;
+                        }
+                        else {
+                            var msg = "";
+                            switch (data.code) {
+                                case 2:
+                                    msg = "验证码错误，请重新输入。";
+                                    break;
+                                case 4:
+                                    msg = "密码错误或账号不存在。";
+                                    break;
+                                case 3:
+                                    msg = "密保信息错误，请重新输入。";
+                                    break;
+                                case 5:
+                                    var url = "https://aq.tiancity.com/Protect/ReopenedAccount?userid=" + LoginLayer.Params.UserId;
+                                    msg = "账号已锁定,请<a href='javascript:void(0)' onclick='window.open(\"" + url + "\")'>解锁</a>后登录.";
+                                    break;
+                                case 20:
+                                    msg = "账号已被官方封停,请联系<a href='javascript:void(0)' onclick='window.open(\"https://evt.tiancity.com/survey/survey.php?sname=FTFC\")'>客服解锁</a>后再登录";
+                                    break;
+                                case 24:
+                                    msg = "账号处于资料变更封停期，如非本人操作请尽快联系客服！";
+                                    break;
+                                case 6:
+                                    msg = "您的IP登录过于频繁,请稍候再试！";
+                                    break;
+                                case 7:
+                                    msg = "您的操作过于频繁,请稍后再试。";
+                                    break;
+                                case 10:
+                                    msg = "站点正在维护，请稍后登录。";
+                                    break;
+                                case 11:
+                                    msg = "身份证信息不完整,请登录首页资料补填。";
+                                    break;
+                                case 15:
+                                    msg = "短信验证码错误,请重新获取。";
+                                    break;
+                                case 22:
+                                    msg = "动态密码错误,请于[天成账号管家APP]进行核对。";
+                                    break;
+                                case 25:
+                                    msg = "此动态密码已使用,请用刷后新的动态码。";
+                                    break;
+                                case 28:
+                                    msg = "账号申请注销中,请联系客服。";
+                                    break;
+                                case 29:
+                                    msg = "账号已注销。";
+                                    break;
+                                case 30:
+                                    msg = "账号已冻结,如需解冻账号,<a href='javascript:void(0)' onclick='window.open(\"http://know.tiancity.com/user/tiancity_contact_customer.jspx\")'>请联系客服中心</a>.";
+                                    break;
+                                case 12: //要求客户端输入验证码
+                                    capView();
+                                    return;
+                                default:
+                                    msg = "系统异常E" + data.code + ",请稍后再试。";
+                                    break;
+                            }
+                            $('ul', pframe).hide().eq(0).show().find('.error').show().html('<em></em>' + msg);
+                            var password = logintype == 0 ? $('input[type=password]', pframe).eq(0) : $('input[type=text]', pframe).eq(1);
+                            password.val('').focus();
+                            if (logintype == 1) {
+                                $('a.getPsw', pframe).text('免费获取验证码').attr('clk', '');
+                            }
+                        }
+                    });
+                };
+
+                var secretLogin = function () {
+                    if (LoginLayer.Utility.LockReq()) { return; }
+                    $.getJSON('https://passport.tiancity.com/handle/GetSecret?jsoncallback=?', { rnd: Math.random(), id: LoginLayer.Params.UserId },
+                    //处理结果
+                    function (data) {
+                        LoginLayer.Utility.UnLockReq();
+                        var fcq = "id=" + LoginLayer.Params.UserId + "&pw=" + encodeURIComponent(LoginLayer.Params.Password) + "&mt=" + LoginLayer.Params.MTValue + "&lt=" + LoginLayer.Params.LoginType;
+                        if (eval(data.rsa.toUpperCase() == "TRUE")) {
+                            jQuery.getScript('https://passport.tiancity.com/js/login.encrypt.js', function () {
+                                setMaxDigits(129);
+                                var key = new RSAKeyPair(data.pm, "", data.pk);
+                                var encrypted = encryptedString(key, fcq);
+                                reqLogin(encrypted.toString());
+                            });
+                        }
+                        else {
+                            reqLogin(fcq);
+                        }
+
+                    });
+                };
+
+                var matsmsLogin = function () {
+                    var val = $('.phoneVerify input[type=text]', pframe).eq(0);
+                    if (!LoginLayer.Format.MatrixSmsCode($.trim(val.val()))) {
+                        $(val).parent().siblings('.error').show().html('<em></em>短信验证码格式不正确。').focus();
+                        $(val).focus();
+                        return;
+                    }
+                    LoginLayer.Params.MTValue = LoginLayer.Params.MTType + "##" + $.trim(val.val());
+                    secretLogin();
+                };
+
+                var matLogin = function () {
+                    var vals = $('.matrixVerify input[type=text]');
+                    var mtval = "";
+                    for (var i = 0; i < vals.length; i++) {
+                        var mv = $.trim(vals.eq(i).val());
+                        if (!LoginLayer.Format.Matrix(mv)) {
+                            $(vals.eq(i)).parent().siblings('.error').show().html('<em></em>密保格式不正确。');
+                            $(vals.eq(i)).focus();
+                            return;
+                        }
+                        mtval += mv + ",";
+                    }
+                    mtval = mtval.substring(0, mtval.length - 1);
+                    LoginLayer.Params.MTValue = LoginLayer.Params.MTType + "#" + LoginLayer.Params.MTKey + "#" + mtval;
+                    secretLogin();
+                };
+
+                var matView = function () {
+                    if (LoginLayer.Utility.LockReq()) { return; }
+                    $.getJSON('https://passport.tiancity.com/handle/GetMatrix?jsoncallback=?', { id: LoginLayer.Params.UserId }, function (data) {
+                        LoginLayer.Utility.UnLockReq();
+                        if (data.code == 200) {
+                            //矩阵卡
+                            var amt = data.mt.split(',');
+                            if (amt.length != 3) {
+                                //抛出异常
+                                return;
+                            }
+                            //给全局变量赋值
+                            LoginLayer.Params.MTType = data.code;
+                            LoginLayer.Params.MTKey = data.mt;
+                            //控制显示层
+                            $('ul', pframe).hide();
+                            $('.matrixVerify').show();
+
+                            $('.matrixVerify p').each(function (i) {
+                                $(this).text(amt[i]);
+                            });
+                            $('.matrixVerify input[type=text]').each(function (i) {
+                                $(this).val('');
+                                if (i == 0) {
+                                    $(this).focus();
+                                }
+                            });
+                        }
+                        else if (data.code == 201) {
+                            //手机密保产品
+                            if (data.mt.length == 0) {
+                                //抛出异常
+                                return;
+                            }
+                            LoginLayer.Params.MTType = data.code;
+                            $('ul', pframe).hide();
+                            $('.phoneVerify', pframe).show().find('li p').text(data.mt).parent().parent().find('input[type=text]').focus();
+                            $('.phoneVerify li a', pframe).eq(0).text('免费获取验证码').attr('clk', '').unbind('click').bind('click', function () {
+                                if (LoginLayer.Utility.LockClick($(this))) { return; }
+                                //获取验证码
+                                $.getJSON('https://passport.tiancity.com/handle/GetSmsMatrix?jsoncallback=?', { id: LoginLayer.Params.UserId }, function (data) {
+                                    var msg = "";
+                                    var atag = $('.phoneVerify li a', pframe).eq(0);
+                                    if (data.code == 0) {
+                                        $(atag).text('短信已发送(60)');
+                                        var i = 59;
+                                        LoginLayer.Utility.timer = setInterval(function () {
+                                            if (i > 0) {
+                                                $(atag).text('短信已发送(' + (i--) + ')');
+                                            }
+                                            else {
+                                                $(atag).text('免费获取验证码');
+                                                LoginLayer.Utility.UnLockClick($(atag));
+                                                clearInterval(LoginLayer.Utility.timer);
+                                            }
+                                        }, 1000);
+                                        $('.phoneVerify input[type=text]', pframe).focus();
+                                        return;
+                                    }
+                                    else if (data.code == 1) {
+                                        msg = "账号格式不正确,请重新登录。";
+                                    }
+                                    else if (data.code == 2) {
+                                        msg = "系统未开启短信密保。";
+                                    }
+                                    else if (data.code == 3) {
+                                        msg = "该账号未开通短信密保。";
+                                    }
+                                    else if (data.code == 4) {
+                                        msg = "发送太频繁,请间隔60秒再发送。";
+                                    }
+                                    else if (data.code == 5) {
+                                        msg = "单个帐号每天最多发送30条。";
+                                    }
+                                    else {
+                                        msg = "系统异常,请重新获取。";
+                                    }
+                                    LoginLayer.Utility.UnLockClick($(atag));
+                                    $('.phoneVerify .error', pframe).show().html('<em></em>' + msg);
+                                });
+                            });
+                        }
+                        else {
+                            LoginLayer.Params.MTValue = "";
+                            secretLogin();
+                        }
+                    });
+                };
+
+                var capLogin = function () {
+                    var cap = $('.mathVerify input[type=text]', pframe).eq(0);
+                    if (!LoginLayer.Format.Captcha(cap.val())) {
+                        $(cap).parent().siblings('.error').show().html('<em></em>验证码格式不正确。');
+                        $(cap).focus();
+                        return;
+                    }
+                    else {
+                        LoginLayer.Params.CapValue = $.trim(cap.val()) + "#" + LoginLayer.Params.CapToken;
+                    }
+
+                    if (logintype == 1) {
+                        secretLogin();
+                        return;
+                    }
+                    matView();
+                };
+
+                var capView = function () {
+                    $.getJSON('https://captcha.tiancity.com/CheckSwitch.ashx?jsoncallback=?', { fid: '104', uid: LoginLayer.Params.UserId }, function (data) {
+                        if (data.R == 1) {
+                            //显示验证码
+                            var capf = $('ul', pframe).hide().eq(1).show();
+                            var loadimage = function () {
+                                LoginLayer.Params.CapToken = LoginLayer.Utility.Guid();
+                                $('img', capf).attr('src', 'https://captcha.tiancity.com/client.ashx?fid=104&code=1&uid=' + LoginLayer.Params.UserId + '&tid=' + LoginLayer.Params.CapToken + '&rnd=' + Math.random() * 99999);
+                                $('input[type=text]', capf).eq(0).val('').focus();
+                            };
+                            loadimage();
+                            $('.client a', capf).unbind('click').bind('click', function () {
+                                loadimage();
+                            });
+                            $('input[type=text]', capf).focus();
+                        }
+                        else {
+                            if (logintype == 0) {
+                                matView();
+                            }
+                            else {
+                                LoginLayer.Params.MTValue = "";
+                                secretLogin();
+                            }
+                        }
+                    });
+                };
+
+
+                var comLogin = function () {
+                    var userid = $('input[type=text]', pframe).eq(0);
+                    var password = logintype == 0 ? $('input[type=password]', pframe).eq(0) : $('input[type=text]', pframe).eq(1);
+                    LoginLayer.Params = new Object();
+                    $('li.error', pframe).hide();
+                    if (!LoginLayer.Format.UserId(userid.val())) {
+                        $('li.error', pframe).show().text('账号格式不正确。');
+                        userid.focus();
+                        return;
+                    }
+                    if (!LoginLayer.Format.Password(password.val())) {
+                        $('li.error', pframe).show().text(logintype == 0 ? '密码格式不正确。' : '验证码格式不正确。');
+                        password.focus();
+                        return;
+                    }
+                    LoginLayer.Params.UserId = $.trim(userid.val()).toLowerCase();
+                    LoginLayer.Params.Password = $.trim(password.val());
+                    LoginLayer.Params.LoginType = logintype;//0为普通登录，1短信验证码登录
+                    capView();
+                };
+
+                if (step == 0) {
+                    comLogin();
+                }
+                else if (step == 1) {
+                    capLogin();
+                }
+                else if (step == 2) {
+                    matLogin();
+                }
+                else if (step == 3) {
+                    matsmsLogin();
+                }
+            },
+            "GetSmsDynamic": function () {
+                var pframe = $('.loginForm').eq(1);
+                var userid = $('input[type=text]', pframe).eq(0);
+                $('li.error', pframe).hide();
+                if (!LoginLayer.Format.UserId(userid.val())) {
+                    $('li.error', pframe).show().text('账号格式不正确。');
+                    userid.focus();
+                    return;
+                }
+                var a = $('li a', pframe).eq(0);
+                if (LoginLayer.Utility.LockClick(a)) { return; }
+                $.getJSON('https://passport.tiancity.com/handle/GetSmsDynamic?jsoncallback=?', { id: $.trim(userid.val()) }, function (data) {
+                    var msg = "";
+                    if (data.code == 0) {
+                        //发送成功
+                        $(a).text('短信已发送(60)');
+                        var i = 59;
+                        LoginLayer.Utility.timer = setInterval(function () {
+                            if (i > 0) {
+                                $(a).text('短信已发送(' + (i--) + ')');
+                            }
+                            else {
+                                $(a).text('免费获取验证码');
+                                LoginLayer.Utility.UnLockClick($(a));
+                                clearInterval(LoginLayer.Utility.timer);
+                            }
+                        }, 1000);
+                        $('input[type=text]', pframe).eq(1).focus();
+                        return;
+                    }
+                    else if (data.code == 1) {
+                        msg = "账号格式不正确。";
+                    }
+                    else if (data.code == 2) {
+                        msg = "短信行业务调整,请使用其他登录方式。";
+                    }
+                    else if (data.code == 3) {
+                        msg = "该账号不存在或未开通短信登录功能。";
+                    }
+                    else if (data.code == 4) {
+                        msg = "发送太频繁,请间隔60秒再发送。";
+                    }
+                    else if (data.code == 5) {
+                        msg = "单个帐号每天最多发送30条。";
+                    }
+                    else {
+                        msg = "系统异常,请重新登录或使用密码登录。";
+                    }
+                    LoginLayer.Utility.UnLockClick($(a));
+                    $('.error', pframe).show().html('<em></em>' + msg);
+                });
+            }
+        },
+        "Button": {
+            "Push": function (step) {
+                if (step >= 1)
+                    return;
+                var pframe = $('.accountLogin .loginForm').eq(2);
+                var userid = $('input[type=text]', pframe).eq(0);
+
+                LoginLayer.Params = new Object();
+
+                if (!LoginLayer.Format.UserId(userid.val())) {
+                    $('li.error', pframe).show().text('账号格式不正确。');
+                    userid.focus();
+                    return;
+                } else {
+                    $('li.error', pframe).hide();
+                }
+                LoginLayer.Params.UserId = $.trim(userid.val()).toLowerCase();
+                LoginLayer.Params.LoginType = 2;
+                if (LoginLayer.Utility.LockReq()) { return; }
+                $.getJSON('https://passport.tiancity.com/handle/PushBtnLoginMsg?jsoncallback=?', { rnd: Math.random(), id: LoginLayer.Params.UserId }, function (data) {
+                    LoginLayer.Utility.UnLockReq();
+                    var msg = "";
+                    switch (data.code) {
+                        case 1:
+                            LoginLayer.Params.BtnKey = data.key;
+                            $('ul', pframe).eq(1).show().siblings('ul').hide();
+                            $('ul input[type=text]', pframe).val(data.id);
+                            $('ul span', pframe).text(data.num);
+                            $('a.cancelBtn', pframe).unbind('click').bind('click', function () {
+                                LoginLayer.Action.Button.Cancle();
+                            });
+                            LoginLayer.Utility.timer = setInterval(function () {
+                                LoginLayer.Action.Button.Monitor();
+                            }, 2000);
+                            return;
+                        case 2:
+                            //msg = "您已登录,请退出当前登录账号";
+                            $("#TcLogin_Layer").find('a.iconClose').click();
+                            LoginLayer.Config.callback();
+                            break;
+                        case 3:
+                            msg = "参数传递错误。";
+                            break;
+                        case 4:
+                            msg = "在周期内只能发送一次。";
+                            break;
+                        case 5:
+                            msg = "该账号不存在或未绑定天成账号管家,<a href='https://sec.tiancity.com'>立即安装</a>。";
+                            break;
+                        case 6:
+                            msg = "屏蔽了一键登录通知，可于[天成账号管家APP]开启。";
+                            break;
+                        case 7:
+                            msg = "设置了夜间免打扰，可于[天成账号管家APP]开启。";
+                            break;
+                        case 8:
+                            msg = "云推送失败,请使用其他登录方式。";
+                            break;
+                        default:
+                            msg = "系统异常E" + data.code + ",请稍后再试。";
+                            break;
+                    };
+
+                    $('li.error', pframe).show().html('<em></em>' + msg);
+                });
+
+            },
+            "Monitor": function () {
+                if (LoginLayer.Utility.timer == null || LoginLayer.Params.BtnKey == null || LoginLayer.Params.BtnKey.length == 0) return;
+                $.getJSON('https://passport.tiancity.com/handle/BtnLogin?jsoncallback=?', { rnd: Math.random(), qk: LoginLayer.Params.BtnKey, st: LoginLayer.Config.siteid }, function (data) {
+                    var msg = "";
+                    if (data.code == 17) {
+                        return;
+                    }
+                    else {
+                        clearInterval(LoginLayer.Utility.timer);
+                        LoginLayer.Params.BtnKey = "";
+                        switch (data.code) {
+                            case 16:
+                                msg = "在允许时间内未确认，请重新获取。";
+                                break;
+                            case 18:
+                                msg = "取消登录。";
+                                break;
+                            case 1:
+                            case 13:
+                                $("#TcLogin_Layer").find('a.iconClose').click();
+                                LoginLayer.Config.callback();
+                                return;
+                            case 6:
+                                msg = "您的IP登录过于频繁,请稍候再试！";
+                                break;
+                            case 5:
+                                {
+                                    var url = "https://aq.tiancity.com/Protect/ReopenedAccount?userid=" + LoginLayer.Params.UserId;
+                                    msg = "您的账号已锁定,请<a href='javascript:void(0)' onclick='window.open(\"" + url + "\")'>解锁</a>后登录！";
+                                    break;
+                                }
+                            case 3:
+                                msg = "参数传递错误";
+                                break;
+                            case 11:
+                                msg = "身份证信息不完整,请登录首页资料补填。";
+                                break;
+                            case 20:
+                                msg = "您的账号已被官方封停,请联系<a href='javascript:void(0)' onclick='window.open(\"https://evt.tiancity.com/survey/survey.php?sname=FTFC\")'>客服解锁</a>后再登录";
+                                break;
+                            case 24:
+                                msg = "账号处于资料变更封停期，如非本人操作请尽快联系客服！";
+                                break;
+                            case 28:
+                                msg = "账号申请注销中,请联系客服。";
+                                break;
+                            case 29:
+                                msg = "账号已注销。";
+                                break;
+                            case 30:
+                                msg = "账号已冻结,如需解冻账号,<a href='javascript:void(0)' onclick='window.open(\"http://know.tiancity.com/user/tiancity_contact_customer.jspx\")'>请联系客服中心</a>.";
+                                break;
+                            default:
+                                msg = "系统异常E" + data.code + ",请稍后再试。";
+                                break;
+                        }
+                        var pframe = $('.accountLogin .loginForm').eq(2);
+                        $('ul', pframe).eq(0).show().siblings('ul').hide();
+                        $('li.error', pframe).show().html('<em></em>' + msg);
+                    }
+                });
+            },
+            "Cancle": function () {
+                if (LoginLayer.Utility.timer == null || LoginLayer.Params.BtnKey == null || LoginLayer.Params.BtnKey.length == 0) return;
+                $.getJSON('https://passport.tiancity.com/handle/BtnLoginCancel?jsoncallback=?', { rnd: Math.random(), qk: LoginLayer.Params.BtnKey, op: 3 }, function (data) {
+                    clearInterval(LoginLayer.Utility.timer);
+                    LoginLayer.Params.BtnKey = "";
+                    var pframe = $('.accountLogin .loginForm').eq(2);
+                    $('ul', pframe).eq(0).show().siblings('ul').hide();
+                    $('.error', pframe).hide();
+                    $('input[type=text]', pframe).val('').eq(0).focus();
+                });
+            }
+        },
+        "QrCode": {
+            "LoadImage": function () {
+                if (LoginLayer.Config.compatiblemobile == true && (window.navigator.userAgent.toLowerCase().indexOf("micromessenger") != -1 ||
+                    /iphone|nokia|sony|ericsson|mot|samsung|sgh|lg|philips|panasonic|alcatel|lenovo|cldc|midp|wap|android|iPod/i.test(navigator.userAgent.toLowerCase()))) {
+                    return;
+                }
+                LoginLayer.Utility.qrtimer = setTimeout(function () { LoginLayer.Action.QrCode.Monitor(); }, 3000);
+                //LoginLayer.Utility.qrtimer = 0;
+                //LoginLayer.Action.QrCode.Monitor();
+                $('.qrcode img').attr('src', 'https://passport.tiancity.com/handle/GetQrCodeImage?' + Math.random());
+            },
+            "Monitor": function () {
+                $.getJSON('https://passport.tiancity.com/handle/QrCodeLogin?jsoncallback=?', { rnd: Math.random(), st: LoginLayer.Config.siteid },
+                function (data) {
+                    switch (data.code) {
+                        case 1:
+                        case 13:
+                            if (LoginLayer.Utility.qrtimer == null) {
+                                return;
+                            }
+                            $("#TcLogin_Layer").find('a.iconClose').click();
+                            LoginLayer.Config.callback();
+                            break;
+                        case 17:
+                            LoginLayer.Utility.qrtimer = setTimeout(function () { LoginLayer.Action.QrCode.Monitor(); }, 3000);
+                            return;
+                        default:
+                            LoginLayer.Action.QrCode.LoadImage();
+                            return;
+                    }
+                });
+            },
+            "Cancle": function () {
+                //console.log('已触发关闭按钮');
+                LoginLayer.Utility.qrtimer = clearInterval(LoginLayer.Utility.qrtimer);
+            }
+        }
+    },
+    "Init": function () {
+        //加载样式
+        var cssfile = ['normalize.min.css', 'TcLoginStyle.css'];
+        for (var i = 0; i < cssfile.length; i++) {
+            $("head").append("<link>");
+            var css = $("head").children(":last");
+            css.attr({
+                rel: "stylesheet",
+                type: "text/css",
+                href: "https://img2.tiancitycdn.com/portal/passport/v2019/css/" + cssfile[i]
+            });
+        }
+        this.Extend();
+    },
+    "Extend": function () {
+        jQuery.fn.extend({
+            showlayer: function (options) {
+                var defaults = { closeLayer: { btn: "", callback: function () { } }, mover: "", autoClose: { seconds: "", callback: function () { } }, maskLayer: { backgroundColor: "#000", transparent: "0.3" }, callback: function () { } };
+                var opt = jQuery.extend(defaults, options);
+                return this.each(function () {
+                    var thisObj = jQuery(this);
+                    var layer = {
+                        arrayMapFixIE6: function () {
+                            if (!Array.prototype.map) {
+                                Array.prototype.map = function (fn, scope) {
+                                    var result = [], ri = 0;
+                                    for (var i = 0, n = this.length; i < n; i++) {
+                                        if (i in this) {
+                                            result[ri++] = fn.call(scope, this[i], i, this);
+                                        }
+                                    }
+                                    return result;
+                                };
+                            }
+                        },
+                        getWinSizeFixIE6: function () {
+                            return ["Height", "Width"].map(function (name) {
+                                return window["inner" + name] ||
+						document.compatMode === "CSS1Compat" && document.documentElement["client" + name] || document.body["client" + name]
+                            });
+                        },
+                        showLayers: function (obj, maskLayer, callback) {
+                            var _t = this;
+                            if (!window.XMLHttpRequest) {
+                                obj.css({ "position": "absolute", "left": (jQuery(document).width() - obj.outerWidth()) / 2, "top": (jQuery(window).height() - obj.outerHeight()) / 2 + jQuery(document).scrollTop(), "display": "block" });
+                                jQuery(window).scroll(function () {
+                                    obj.css("top", (jQuery(window).height() - obj.outerHeight()) / 2 + jQuery(document).scrollTop());
+                                });
+                                jQuery(window).resize(function () {
+                                    var r = [];
+                                    r = _t.getWinSizeFixIE6();
+                                    obj.css({ "left": (r[1] - obj.outerWidth()) / 2, "top": (r[0] - obj.outerHeight()) / 2 + jQuery(document).scrollTop() });
+                                });
+
+                            } else {
+                                var fixedTop = (jQuery(window).height() - obj.outerHeight()) / 2;
+                                var fixedLeft = (jQuery(window).width() - obj.outerWidth()) / 2;
+                                obj.css({ "position": "fixed", "top": fixedTop, "left": fixedLeft, "display": "none" });
+                                if (fixedTop <= 0 || fixedLeft <= 0) {
+                                    if (window.navigator.userAgent.toLowerCase().indexOf("micromessenger") != -1 ||
+                                                /iphone|nokia|sony|ericsson|mot|samsung|sgh|lg|philips|panasonic|alcatel|lenovo|cldc|midp|wap|android|iPod/i.test(navigator.userAgent.toLowerCase())) {
+                                    }
+                                    else {
+                                        fixedTop = (jQuery(window).height() - 360) / 2;
+                                        fixedLeft = (jQuery(window).width() - 570) / 2;
+                                        obj.css({ "position": "fixed", "top": fixedTop, "left": fixedLeft, "display": "none" });
+                                    }
+                                }
+                                jQuery(window).resize(function () {
+                                    var r = [];
+                                    r = _t.getWinSizeFixIE6();
+                                    fixedTop = (r[0] - obj.outerHeight()) / 2;
+                                    fixedLeft = (r[1] - obj.outerWidth()) / 2;
+                                    obj.css({ "top": fixedTop, "left": fixedLeft });
+                                });
+                            }
+                            obj.css({ "z-index": 1001 });
+                            this.addMaskLayer(maskLayer);
+                            if (window.navigator.userAgent.toLowerCase().indexOf("micromessenger") != -1 ||
+                                                /iphone|nokia|sony|ericsson|mot|samsung|sgh|lg|philips|panasonic|alcatel|lenovo|cldc|midp|wap|android|iPod/i.test(navigator.userAgent.toLowerCase())) {
+
+                                var mcount = 0;
+                                var fn = function () {
+                                    mcount++;
+                                    var r = [];
+                                    r = _t.getWinSizeFixIE6();
+                                    var dtop = parseInt((r[0] - obj.outerHeight()) / 2);
+                                    var dleft = parseInt((r[1] - obj.outerWidth()) / 2);
+
+                                    //console.log('==r[0]' + r[0] + 'r[1]' + r[1] + 'height' + obj.outerHeight() + 'width:' + obj.outerWidth() + "top:" + dtop + "left:" + dleft);
+
+                                    if (Math.abs(fixedTop - dtop) < 3 && Math.abs(fixedLeft - dleft) < 3) {
+                                        if (mcount < 10) {
+                                            obj.css({ "display": "block" });
+                                            //console.log('监控变化，r[0]' + r[0] + 'r[1]' + r[1] + 'height' + obj.outerHeight() + 'width:' + obj.outerWidth());
+                                            setTimeout(fn, 200);
+                                        }
+                                    }
+                                    else {
+                                        fixedTop = dtop;
+                                        fixedLeft = dleft;
+                                        obj.css({ "top": fixedTop, "left": fixedLeft, "display": "block" });
+                                        //console.log('调整位置fixedTop' + fixedTop + 'fixedLeft' + fixedLeft);
+                                        setTimeout(fn, 200);
+                                    }
+                                };
+                                setTimeout(fn, 200);
+                            } else {
+                                obj.css({ "display": "block" });
+                            }
+                            callback();
+                        },
+                        closeLayers: function (closeLayer, obj) {
+                            var _t = this;
+                            jQuery(closeLayer.btn, obj).bind("click", function () {
+                                obj.css({ "display": "none" });
+                                //TcLoginWin.QrCodeCancle();
+                                _t.removeMaskLayer();
+                                closeLayer.hasOwnProperty("callback") ? closeLayer.callback() : "";
+                            });
+                        },
+                        autoCloseLayer: function (autoClose, obj) {
+                            var _t = this;
+                            setTimeout(function () {
+                                obj.css({ "display": "none" });
+                                _t.removeMaskLayer();
+                                autoClose.hasOwnProperty("callback") ? autoClose.callback() : "";
+                            }, parseInt(autoClose.second) * 1000);
+                        },
+                        addMaskLayer: function (maskLayer) {
+                            !window.XMLHttpRequest ? jQuery("body").css({ "position": "relative" }) : "";
+                            if (jQuery(".TcLoginWin_popUpMaskLayer").length > 0) return;
+                            var opacity = maskLayer.transparent, alphaOpacity = parseFloat(maskLayer.transparent) * 100, backgroundColor = maskLayer.backgroundColor;
+                            var maskPosition = !window.XMLHttpRequest ? "absolute" : "fixed";
+                            var maskHeight = !window.XMLHttpRequest ? jQuery(document).height() : "100%";
+                            jQuery("<div class='TcLoginWin_popUpMaskLayer'></div>").appendTo("body");
+                            jQuery(".TcLoginWin_popUpMaskLayer").css({ "width": "100%", "height": maskHeight, "background-color": backgroundColor, "opacity": opacity, "-moz-opacity": opacity, "filter": "alpha(opacity=" + alphaOpacity + ")", "position": maskPosition, "left": 0, "top": 0, "z-index": 1000 });
+                        },
+                        removeMaskLayer: function () {
+                            if (jQuery(".TcLoginWin_popUpMaskLayer").length > 0) {
+                                jQuery(".TcLoginWin_popUpMaskLayer").remove();
+                            };
+                            if (jQuery("#TcLogin_Layer").length > 0) {
+                                jQuery("#TcLogin_Layer").remove();
+                            }
+                        },
+                        moveLayer: function (mover, obj) {
+                            var m = jQuery(mover);
+                            m.bind({
+                                "mousedown": function (e) {
+                                    if (!e) e = window.event;
+                                    var posX = e.clientX - parseInt(obj.css('left'));
+                                    var posY = e.clientY - parseInt(obj.css('top'));
+                                    jQuery(document).bind("mousemove", { x: posX, y: posY }, function (e) {
+                                        var pos = e.data;
+                                        if (!e) e = window.event;
+                                        obj.css({ 'top': e.clientY - pos.y, 'left': e.clientX - pos.x });
+                                    });
+                                },
+                                "mouseup": function () {
+                                    jQuery(document).unbind("mousemove");
+                                }
+                            });
+
+                        },
+                        init: function (obj) {
+                            this.arrayMapFixIE6();
+                            this.showLayers(thisObj, obj.maskLayer, obj.callback);
+                            if (!!opt.closeLayer.btn) {
+                                this.closeLayers(obj.closeLayer, thisObj, obj);
+                            }
+                            if (!!obj.autoClose.second) {
+                                this.autoCloseLayer(obj.autoClose, thisObj);
+                            }
+                            if (!!obj.mover) {
+                                this.moveLayer(obj.mover, thisObj);
+                            }
+                        }
+                    };
+                    layer.init(opt);
+                });
+            },
+            closelayer: function (callback) {
+                return this.each(function () {
+                    jQuery(this).css("display", "none");
+                    if (jQuery(".TcLoginWin_popUpMaskLayer").length > 0) {
+                        jQuery(".TcLoginWin_popUpMaskLayer").remove();
+                    };
+                    if (!!callback) {
+                        callback();
+                    }
+                });
+            }
+        });
+    }
+};
+
+
+jQuery(function () {
+    try {
+        if (LoginLayer.Config.compatiblemobile)
+        {
+        // 移动端时载入rem_screen.js & m.css
+            if (window.navigator.userAgent.toLowerCase().indexOf("micromessenger") != -1 ||
+                /iphone|nokia|sony|ericsson|mot|samsung|sgh|lg|philips|panasonic|alcatel|lenovo|cldc|midp|wap|android|iPod/i.test(navigator.userAgent.toLowerCase())) {
+                window.use_screen_base = '750';
+                $.ajaxSetup({ cache: true });
+                $.getScript('https://image.tiancity.com/common/js/rem_screen.js', function () {
+                    // 登录框移动端样式
+                    $.getScript('https://img2.tiancitycdn.com/portal/v2019/js/common-1.2.4.min.js', function () {
+                        $.addLink(['TcLogin_m.css'], 'https://img2.tiancitycdn.com/portal/passport/v2019/css/', function () {
+                        });
+                        $.ajaxSetup({ cache: false });
+                    });
+                });
+
+                // 禁止手机端原生浏览器缩放
+                var lastTouchEnd = 0;
+                document.addEventListener('touchstart', function (event) {
+                    if (event.touches.length > 1) {
+                        event.preventDefault();
+                    }
+                });
+                document.addEventListener('touchend', function (event) {
+                    var now = (new Date()).getTime();
+                    if (now - lastTouchEnd <= 300) {
+                        event.preventDefault();
+                    }
+                    lastTouchEnd = now;
+                }, false);
+                document.addEventListener('gesturestart', function (event) {
+                    event.preventDefault();
+                });
+                document.addEventListener('dblclick', function (event) {
+                    event.preventDefault();
+                });
+
+                // 移动端键盘收起，还原页面位置
+                $(document).on("blur", 'input', function () {
+                    window.scroll(0, 0);
+                });
+            }
+        }
+    }
+    catch (ex) { }
+    try { LoginLayer.Init(); } catch (ex) { }
+});

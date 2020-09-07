@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSONP跨域请求</title>
+</head>
+<body>
+    <button>点击发送跨域请求</button>
+    <h2></h2>
+    <script>
+        const btn = document.getElementsByTagName('button')[0];
+        const h2 = document.getElementsByTagName('h2')[0];
+
+        //声明函数  处理服务器返回的结果
+        function abc(data){
+            console.log(data);
+            h2.innerHTML = data.name;
+        }
+
+        btn.onclick = function(){
+            //1. 创建 script 标签
+            const script = document.createElement('script');
+            //2. 设置 src 属性
+            script.src = 'http://127.0.0.1:8000/jsonp-server?callback=abc';
+            //3. 将标签插入到文档
+            document.body.appendChild(script);
+        }
+    </script>
+</body>
+</html>

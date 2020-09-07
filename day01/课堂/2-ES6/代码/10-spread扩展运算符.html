@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扩展运算符</title>
+</head>
+<body>
+    <script>
+        // 『...』 扩展运算符(展开运算符)是能将『数组』转换为『参数序列』
+        // ...tfboys   =>  '王源','王俊凯','易烊千玺'
+        // let tfboys = ['王源','王俊凯','易烊千玺'];
+        // function nanhai(){
+        //     console.log(arguments);
+        // }
+        // nanhai(...tfboys);// nanhai('王源','王俊凯','易烊千玺');
+
+        //1. 展开数组
+        // let arr = [1,2,3,4];
+        // let newArr = [...arr];//  [...arr] => [1,2,3,4]
+        // console.log(arr);
+        // console.log(newArr);
+        // console.log(arr === newArr);
+
+        //2. 展开对象   
+        let sOne = {
+            q: '天音波'
+        }
+
+        let sTwo = {
+            w: '金钟罩'
+        }
+
+        let sThree = {
+            e: '天雷破'
+        }
+
+        let sFour = {
+            r: '猛龙摆尾'
+        }
+
+        let sFive = {
+            q: '回音击'
+        }
+
+        let mangseng = {...sOne, ...sTwo, ...sThree, ...sFour, ...sFive};
+
+        console.log(mangseng);
+    </script>
+</body>
+</html>

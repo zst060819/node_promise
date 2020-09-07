@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点击获取段子</button>
+    <ul id="duanzis">
+
+    </ul>
+    <script>
+        const btn = document.getElementById('btn');
+        const duanzis = document.getElementById('duanzis');
+
+        //绑定事件
+        btn.onclick = function(){
+            //1. 创建对象
+            const x = new XMLHttpRequest();
+            //2. 初始化
+            x.open("GET", 'https://api.apiopen.top/getJoke?type=text');
+            //3. 发送
+            x.send();
+            //4. 事件绑定
+            x.onreadystatechange = function(){
+                if(x.readyState === 4){
+                    if(x.status >= 200 && x.status < 300){
+                        //处理响应结果
+                        // console.log(x.response);
+                        //解析数据
+                        const data = JSON.parse(x.response);
+                        //遍历数据
+                        data.result.forEach(item => {
+                            //动态创建 li 标签
+                            const li = document.createElement('li');
+                            //设置 li 的文本内容
+                            li.innerHTML = item.text;
+                            //将 li 插入到 ul 标签中
+                            duanzis.appendChild(li);
+                        });
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

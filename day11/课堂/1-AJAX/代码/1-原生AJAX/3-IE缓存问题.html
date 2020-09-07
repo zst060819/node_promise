@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET 请求</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2 class="page-header">IE缓存问题</h2>
+        <button id="btn" class="btn btn-primary">点击发送 AJAX GET 请求</button>
+    </div>
+
+    <script>
+        //获取元素对象
+        const btn = document.getElementById('btn');
+
+        //绑定事件
+        btn.onclick = function(){
+            //1. 创建 AJAX 对象
+            const xhr = new XMLHttpRequest();
+            //2. 初始化 http://127.0.0.1:8000/get-server
+            xhr.open('GET', '/cache-server?t='+Date.now());
+            //3. 发送
+            xhr.send();
+            //4. 绑定事件  是处理服务器返回的结果
+            // on 当...时候   readyState 属性    change 改变
+            xhr.onreadystatechange = function(){
+                // readyState 5 个值  0,1,2,3,4
+                if(xhr.readyState === 4){
+                    //判断响应状态码
+                    if(xhr.status >= 200 && xhr.status < 300){
+                        //获取服务器返回的结果
+                        //响应状态码
+                        console.log(xhr.status);
+                        //获取响应头信息
+                        console.log(xhr.getAllResponseHeaders());
+                        //获取响应体
+                        console.log(xhr.response);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

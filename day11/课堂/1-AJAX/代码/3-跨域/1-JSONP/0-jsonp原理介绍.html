@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSONP演示</title>
+</head>
+<body>
+    <h2></h2>
+    <script src="./js/app.js"></script>
+    <script>
+        //封装一个函数处理数据
+        function handleData(data){
+            //获取 h2 标签
+            const h2 = document.getElementsByTagName('h2')[0];
+            h2.innerHTML = data.name;
+        }
+        // handleData({"name":"尚硅谷"});
+    </script>
+    <script src="http://127.0.0.1:8000/server"></script>
+</body>
+</html>

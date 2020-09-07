@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call-apply-bind</title>
+</head>
+
+<body>
+    <script>
+        //声明一个加法函数
+        function add(a,b){
+            console.log(a + b);
+        }
+
+        //直接调用
+        // add(1,2);
+        //使用 call 方法来调用
+        // add.call(null, 2, 3)
+        //使用 apply 方法调用
+        // add.apply(null, [3,4]);
+        // bind 本事是一个方法, 返回一个新的函数
+        // var fn = add.bind(null);
+        // fn(4,5);
+
+        console.log(Function.prototype.bind);
+        console.log(Function.prototype.apply);
+        console.log(Function.prototype.call);
+        
+    </script>
+</body>
+
+</html>

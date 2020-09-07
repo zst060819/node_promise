@@ -1,0 +1,37 @@
+﻿function loadBG(){
+    var mainAd = {
+        img: $('#loginHeadBg').attr('data-img')||'https://img2.tiancitycdn.com/portal/passport/v2019/images/login-bg.jpg',
+        link:$('#loginHeadBg').attr('data-link')||'javascript:',
+        color:$('#loginHeadBg').attr('data-color')||'#fff',
+        title:$('#loginHeadBg').attr('data-title')||''
+    };
+    if(!!mainAd.img){
+        var obj = new Image();
+        obj.src = mainAd.img;
+        var setSrc = function(){
+            creatAd(mainAd);
+            return false;
+        }
+        if(obj.complete){
+            setSrc();
+        }else{
+            obj.onload = function(){
+                setSrc();
+            }
+	    obj.onerror = function(){
+            	setSrc();
+            }
+        }
+    }else{
+
+    }
+}
+
+function creatAd(o){
+	var _loginHead = $('<a href="'+o.link+'" target="_blank" class="loginHead" style="background-image:url('+o.img+');background-color:'+o.color+'" title="'+o.title+'"></a>');
+     $('#TcLogin_Layer').append(_loginHead);
+}
+
+$(function(){
+    loadBG();
+})

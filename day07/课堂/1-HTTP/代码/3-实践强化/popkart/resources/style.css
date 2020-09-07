@@ -1,0 +1,107 @@
+#TcLogin_Layer *{box-sizing: border-box}
+#TcLogin_Layer {color:#000;}
+#TcLogin_Layer a{outline:none;}
+#TcLogin_Layer .hide{display:none;}
+#TcLogin_Layer .btn {display:block;border-radius: 5px;text-align: center; background: #147de8;width:100%;height:42px;line-height: 42px;font-size:16px;color:#fff;}
+#TcLogin_Layer .btn.w150{width:150px;float:left;}
+#TcLogin_Layer .btn.gary{background:#c9c9c9}
+#TcLogin_Layer input {height:40px;width:100%;padding:0 20px;text-align: left;line-height: 40px;font-size: 14px;color:#000;border:1px solid #ddd;border-radius:5px;background: #f4f4f4;margin-top:9px;}
+#TcLogin_Layer input:focus {border:1px solid #147de8;border-radius: 5px;outline:none;}
+
+#TcLogin_Layer .container {height:360px;width:570px;}
+#TcLogin_Layer .aside {width:200px;height:360px;background:#f4f4f4;padding:30px 20px;float:left;}
+#TcLogin_Layer .aside h2 {line-height: 20px;font-size: 16px;color:#999;}
+#TcLogin_Layer .aside h2 span {color:#147de8;}
+#TcLogin_Layer .aside .qrcode{position:relative;width:130px;height:130px;margin:30px auto;background:url(../images/qrcode-bg.jpg) no-repeat 0 0;padding:12px;}
+#TcLogin_Layer .aside .qrcode img {width:106px;height:106px;}
+#TcLogin_Layer .aside .qrcode .qrcode-failed {background:#000;background: rgba(0,0,0,.6);width: 130px;height: 130px;position: absolute;left: 0;top: 0;padding: 40px 0 0;text-align: center;color: #e9e9e9;font-weight: bold;font-size: 16px;}
+#TcLogin_Layer .aside .qrcode .qrcode-failed .reloadBtn {color: #fff;background: rgba(20, 125, 232, .8);width: 90px;height: 26px;font-size: 14px;display: block;margin: 5px auto;line-height: 26px;border-radius: 10px;font-weight: normal}
+#TcLogin_Layer .main {float:left;width:370px;height:360px;background:#fff;}
+#TcLogin_Layer .main .icon {background:url(../images/sprite.png?v=191107) no-repeat 0 0;text-indent:-999em}
+#TcLogin_Layer .main .iconPc {background-position:0 0}
+#TcLogin_Layer .main .iconMax {background-position:-24px 0}
+#TcLogin_Layer .main .iconMobile {background-position:-48px 0}
+#TcLogin_Layer .main .iconMax2 {width:15px;height:12px;background-position:-80px 0}
+#TcLogin_Layer .main .iconPc2{background-position:-80px -20px;width:17px;height:16px;}
+#TcLogin_Layer .main .iconClose {background-position:0 -30px;width:50px;height:50px;}
+#TcLogin_Layer .main .iconPc,
+#TcLogin_Layer .main .iconMax,
+#TcLogin_Layer .main .iconMobile {width:24px;height:24px;}
+#TcLogin_Layer .main h1 {height:50px;line-height: 50px;border-bottom: 1px solid #f4f4f4;font-size: 16px;color:#000;padding-left:30px;}
+#TcLogin_Layer .main h1 .iconClose {display:block;float:right}
+#TcLogin_Layer .con {width:370px;height:310px;padding:0 30px;position: relative}
+#TcLogin_Layer .con .loginNav {width:100%;height:50px;line-height:50px;}
+#TcLogin_Layer .con .loginNav li {height:50px;float:left;}
+#TcLogin_Layer .con .loginNav li a {display: block;float:left;color:#999;font-size:14px;padding-right:18px;}
+#TcLogin_Layer .con .loginNav li a.on {color:#000;}
+#TcLogin_Layer .con .loginNav li a i {margin-right:5px;display: inline-block;width:24px;height:24px;vertical-align: middle}
+#TcLogin_Layer .con .loginNav .btnNavOnekey{position: relative;padding-left: 18px;}
+#TcLogin_Layer .con .loginNav .btnNavOnekey::before {content:'';height:22px;width:1px;position: absolute;left:0;top:50%;margin-top:-11px;background: #eee;}
+#TcLogin_Layer .con .loginForm {width:100%;display: none;position: relative;height:260px;}
+#TcLogin_Layer .con .loginForm .tips {position:absolute;bottom:20px;right:0;text-align:right;height:20px;line-height:20px;font-size:12px;}
+#TcLogin_Layer .con .loginForm .tips a {display:inline-block;color:#757575;text-decoration: underline}
+#TcLogin_Layer .con .loginForm li {width:100%;height:56px}
+#TcLogin_Layer .con .loginForm li input.psw {width:165px;margin-right:10px;}
+#TcLogin_Layer .con .loginForm li .getPsw{display:inline-block;border-radius: 5px;text-align: center; background: #147de8;width:127px;height:42px;line-height: 42px;font-size:14px;color:#fff;}
+#TcLogin_Layer .con .loginForm li.error,
+#TcLogin_Layer .con .loginForm li.changeLogin {padding-bottom:5px;line-height:20px;color:#e25a00;height:auto!important;overflow: hidden;text-overflow: ellipsis;-o-text-overflow: ellipsis;white-space:nowrap;}
+#TcLogin_Layer .con .loginForm li.error em {display:inline-block;vertical-align: middle; width:23px;height:20px;background:url(../images/sprite.jpg) no-repeat -65px -60px}
+#TcLogin_Layer .con .loginForm li.error a{color:#e25a00;text-decoration: underline;}
+#TcLogin_Layer .con .loginForm li.changeLogin a{color:#999}
+#TcLogin_Layer .con .loginForm li.changeLogin a:hover {text-decoration: underline}
+#TcLogin_Layer .con .loginForm li.changeLogin a i{vertical-align: middle;display: inline-block;margin-right: 5px}
+#TcLogin_Layer .con .loginForm .btns {height:50px;}
+#TcLogin_Layer .con .loginForm li.msg {height:26px;line-height:26px;font-size: 14px;color:#999;}
+#TcLogin_Layer .con .loginForm .mathVerify li.client {line-height:30px;height:40px;}
+#TcLogin_Layer .con .loginForm .mathVerify li.client img {float:left}
+#TcLogin_Layer .con .loginForm .mathVerify li.client span {padding-left: 10px}
+#TcLogin_Layer .con .loginForm .mathVerify li.client span a {text-decoration: underline}
+#TcLogin_Layer .con .loginForm .cancelBtn{margin-left:8px;background:#f4f4f4;color:#000;}
+#TcLogin_Layer .con .loginForm .matrixVerify li{height:48px;}
+#TcLogin_Layer .con .loginForm .matrixVerify li.msg {height:26px;}
+#TcLogin_Layer .con .loginForm .matrixVerify li p {display: inline-block;width: 30%;height: 40px;line-height: 40px;background:#0d0d0d;border-radius:5px;font-size: 16px;color: #fff;text-align: center;margin-top:5px;}
+#TcLogin_Layer .con .loginForm .matrixVerify li input {display: inline-block;width: 30%;height: 40px;line-height: 40px;font-size: 16px;color: #000;text-align: center;margin-top:4px;}
+#TcLogin_Layer .con .loginForm .matrixVerify li p+p,
+#TcLogin_Layer .con .loginForm .matrixVerify li input+input {margin-left:5%;}
+#TcLogin_Layer .con .loginForm .phoneVerify .phoneInfo {height:42px;line-height: 42px}
+#TcLogin_Layer .con .loginForm .phoneVerify li p {font-size: 16px;font-weight: bold;display: inline-block;width:175px;line-height:42px}
+#TcLogin_Layer .con .loginForm .oneKeyVerify .loginCode {height:40px;}
+#TcLogin_Layer .con .loginForm .oneKeyVerify .loginCode span {font-size:18px;color:red;}
+#TcLogin_Layer .con .loginForm .oneKeyVerify .wait em {width:5px;height:5px;display: inline-block;margin-left:3px;background:#5da5fd;vertical-align: middle;-webkit-animation: loadingAni .9s infinite;animation: loadingAni .9s infinite;-webkit-animation-fill-mode: both;animation-fill-mode: both;}
+#TcLogin_Layer .con .loginForm .oneKeyVerify .wait .w2{-webkit-animation-delay: 0.3s;animation-delay: 0.3s;}
+#TcLogin_Layer .con .loginForm .oneKeyVerify .wait .w3{-webkit-animation-delay: 0.6s;animation-delay: 0.6s;}
+@-webkit-keyframes loadingAni {
+  1%,30% { background:#fff }
+  0%,31%,100% { background:#5da5fd }
+}
+		 
+@keyframes loadingAni {
+  1%,30% { background:#fff }
+  0%,31%,100% { background:#5da5fd }
+}
+
+#TcLogin_Layer .con .btnIcon {background: url(../images/icons.png?v=191107) no-repeat 0 0;width:52px;height:52px;display: block}
+#TcLogin_Layer .con .btnIcon-2 {background-position:-52px 0;}
+#TcLogin_Layer .con .btnIcon-3 {background-position:-104px 0;}
+#TcLogin_Layer .con .btnIcon-4 {background-position:-156px 0;}
+#TcLogin_Layer .con .btnIcon-5 {background-position:-208px 0;}
+#TcLogin_Layer .con .quickBar {width:100%;height:310px;}
+#TcLogin_Layer .con .quickBar 
+#TcLogin_Layer .con .quickBar .menuBar{height:40px;padding-top:10px;line-height: 40px;padding-left:30px;}
+#TcLogin_Layer .con .quickBar .menuBar .backBtn {font-size:14px;color:#999;line-height: 40px}
+#TcLogin_Layer .con .quickBar .msg {line-height:26px;font-size: 14px;color:#999;padding-bottom:10px}
+#TcLogin_Layer .con .quickBar ul{width:100%;}
+#TcLogin_Layer .con .quickBar li {float:left;}
+#TcLogin_Layer .con .quickBar li+li {margin-left:18px}
+#TcLogin_Layer .con .quickBar li.mr0 {margin:0;}
+#TcLogin_Layer .con .quickBar li.mr0 a {height:85px;}
+#TcLogin_Layer .con .quickBar li a{height:90px;width:62px;display: block}
+#TcLogin_Layer .con .quickBar li a i{width:52px;height:52px;margin:0 auto;}
+#TcLogin_Layer .con .quickBar li p {width:62px;text-align:center;line-height: 26px;color:#999;font-size:12px;}
+#TcLogin_Layer .con .quickBar .tips {color:#999;}
+#TcLogin_Layer .con .quickBar .tips a {color:#ff0000;}
+#TcLogin_Layer .con .logined {padding: 50px 0 0;position: relative;height: 252px;}
+#TcLogin_Layer .con .logined p{color:#000;font-size:16px;}
+#TcLogin_Layer .con .logined p span{color:#e25a00}
+#TcLogin_Layer .con .logined .logoutBtn{font-size:16px;}
+#TcLogin_Layer .con .logined .btns{position: absolute;bottom: 0;left: 0;width: 100%;}

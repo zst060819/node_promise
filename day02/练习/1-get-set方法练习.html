@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1. 为对象添加属性 total 总数以及 avg 平均数
+        //2. 添加 Symbol.iterator 属性, 使用 for...of 结构遍历 stus 中的数据
+        let ours = {
+            name:'h5200422',
+            stus: [
+                {name:'志强',score:88},
+                {name:'文娟',score:90},
+                {name:'艳萍',score:97},
+                {name:'田静',score:86},
+                {name:'王伟',score:92},
+            ]
+        };
+
+        //为对象添加属性
+        Object.defineProperties(ours, {
+            total: {
+                get: function() {
+                    //声明一个变量
+                    let t = 0;
+                    this.stus.forEach(item => {
+                        t += item.score;
+                    })
+                    return t;
+                }
+            },
+            avg: {
+                get: function(){
+                    return this.total / this.stus.length;
+                }
+            }
+        });
+
+        console.log(ours.total);
+        console.log(ours.avg);
+        
+
+    </script>
+</body>
+</html>

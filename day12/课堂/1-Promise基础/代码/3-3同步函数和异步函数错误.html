@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS函数异常处理</title>
+</head>
+
+<body>
+    <script>
+        function fn() {
+            //
+            console.log("我是一个函数");
+            //同步抛出一个错误
+            // throw new Error('出问题啦!!');
+            // let a = 100;
+            // a();
+            //异步任务抛出一个错误
+            setTimeout(() => {
+                try {
+                    throw new Error("异步错误!!");
+                } catch (e) {
+                    console.dir(e);
+                }
+            }, 1000);
+        }
+
+        try {
+            fn();
+        } catch (e) {
+            console.dir(e);
+        }
+    </script>
+</body>
+
+</html>

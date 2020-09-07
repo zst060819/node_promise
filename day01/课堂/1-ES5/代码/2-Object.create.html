@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object.create</title>
+</head>
+
+<body>
+    <script>
+        //声明对象的三种方式
+        // {}  function Person()  new Object()
+        //声明一个汽车的对象
+        var car = {
+            name: '汽车'
+        };
+        //对象 哈佛汽车
+        var hafo = Object.create(car, {
+            //品牌属性
+            brand: {
+                //属性值
+                value: '哈佛',
+                //是否可以修改  write 写
+                writable: false,
+                //是否可以删除  config 配置
+                configurable: false,
+                //是否可以枚举(遍历)
+                enumerable: false
+            },
+            //添加价格属性
+            price: {
+                //是否可以删除  config 配置
+                configurable: false,
+                //是否可以枚举(遍历)
+                enumerable: false,
+                //get 和 set 有自己独有自动执行的时机  
+                // 当获取对象的 price 属性的时候, 会触发 get 方法
+                get: function () {
+                    // console.log("price属性被获取了");
+                    //动态获取
+                    return this.jiage;
+                },
+                // 当对对象的 price 属性进行赋值的时候, 会触发 set 方法
+                set: function (newValue) {
+                    // console.log("price属性被赋值啦!!");
+                    //检测新的值是否合法  "i love you"
+                    this.jiage = newValue; // this指向的值新的对象(hafo)
+                }
+            }
+        });
+
+        //关于配置属性
+        //检测是否可写
+        hafo.brand = '长城';
+        //检测是否可以删除
+        delete hafo.brand;
+        //检测是否可以枚举
+        for (var i in hafo) {
+            // console.log(i);
+        }
+        // console.log(hafo);
+
+        //关于 get 和 set
+        hafo.price = 200000;
+        console.log(hafo.price);
+
+        console.log(hafo);
+
+    </script>
+</body>
+
+</html>

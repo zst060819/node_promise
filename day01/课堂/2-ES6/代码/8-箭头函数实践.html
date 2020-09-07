@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数实践</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: #58a;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        //需求-1  点击 div 2s 后颜色变成「粉色」
+        //获取 div 元素对象
+        let div = document.getElementsByTagName('div')[0];
+
+        div.addEventListener('click', function () {
+            setTimeout(() => {
+                //修改背景颜色
+                // console.log(this);
+                this.style.background = 'pink';
+            }, 2000);
+        });
+
+
+        //需求-2  从数组中返回偶数的元素
+        let arr = [1, 2, 6, 9, 10, 199, 200];
+
+        let result = arr.filter(function (item) {
+            if (item % 2 === 0) {
+                return true;
+            }
+        });
+
+        let res = arr.filter(item => item % 2 === 0);
+
+        console.log(result);
+        console.log(res);
+
+        // 箭头函数适合做与 this 无关的回调函数. 数组方法的回调
+        // 箭头函数不是做与 this 有关的回调函数. 对象的方法, DOM 元素事件回调
+
+
+        // let fn = () => {
+        //     console.log(this);
+        //     console.log(this.name);
+        // }
+        // let fn = function(){
+        //     console.log(this);
+        //     console.log(this.name);
+        // }
+        // let obj = {
+        //     name: 'atguigu',
+        //     getName: fn
+        // }
+        // obj.getName();
+        // div.onclick = () => {
+        //     console.log(this);
+        // }
+    </script>
+</body>
+
+</html>

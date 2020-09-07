@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object.defineProperties</title>
+</head>
+<body>
+    <script>
+        //Object.defineProperties 为班级添加成绩总数与平均数
+        var banji = {
+            name: 'H5200422',
+            scores:[
+                100,50,63,89,76,10
+            ]
+        };
+        //创建属性  
+        // banji.slogon = "向上吧 少年!!";
+        //通过 Object.defineProperties
+        Object.defineProperties(banji, {
+            //添加总成绩
+            total: {
+                value: 378,
+                writable:true,
+                configurable: true,
+                enumerable: true
+            },
+            //添加平均成绩
+            avg: {
+                get: function(){
+                    //计算当前班级的平均成绩, 并返回
+                    // this 指向的是当前正在操作的对象
+                    var total = 0;
+                    this.scores.forEach(function(item){
+                        total += item;
+                    });
+                    //计算平均数
+                    var avg = total / this.scores.length;
+                    return avg;
+                }
+            }
+        });
+
+        //获取班级的总成绩
+        console.log(banji.total);
+        //获取班级的平均成绩
+        console.log(banji.avg);
+    </script>
+</body>
+</html>

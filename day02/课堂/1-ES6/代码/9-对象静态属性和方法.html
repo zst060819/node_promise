@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>静态成员</title>
+</head>
+<body>
+    <script>
+        //静态成员
+        // function Phone(){
+        // }
+        // Phone.name = '手机';
+        // Phone.change = function(){
+        //     console.log("我可以改变世界");
+        // }
+        // //实例对象
+        // let s = new Phone();
+        // console.log(s.name);
+
+        //class 中声明静态成员
+        class Phone{
+            //构造方法
+            constructor(brand, price){
+                this.brand = brand;
+                this.price = price;
+            }
+            call(){
+            }
+            //声明静态成员
+            static change(){
+                console.log('我可以改变世界');
+            }
+        }
+
+        Phone.change();
+        //实例化
+        let s = new Phone('xxx', 200);
+        s.change();
+
+
+
+
+
+        
+    </script>
+</body>
+</html>

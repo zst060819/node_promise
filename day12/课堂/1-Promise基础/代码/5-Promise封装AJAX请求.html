@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise封装AJAX请求</title>
+    <script crossorigin="anonymous" src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <button id="btn">点击发送 AJAX 请求</button>
+    <script>
+        /*
+            封装一个函数 promiseAJAX  只实现 GET 请求
+            用来发送 AJAX 请求
+            返回 Promise 对象
+        */
+        function promiseAJAX(url){
+            return new Promise((resolve, reject)=>{
+                //ajax四步走
+                let x = new XMLHttpRequest();
+                //初始化
+                x.open("GET", url);
+                //发送
+                x.send();
+                //绑定事件
+                x.onreadystatechange = function(){
+                    if(x.readyState === 4){
+                        if(x.status >= 200 && x.status < 300){
+                            //成功 响应体作为成功的值
+                            resolve(x.response);
+                        }else{
+                            //失败 状态码作为失败的值
+                            reject(x.status);
+                        }
+                    }
+                }
+            });
+        }
+
+        //接口地址
+        let url = 'https://api.apiopen.top/getJok';
+        //发送 AJAX 请求
+        let xhr = promiseAJAX(url);
+        //处理成功或失败的结果
+        xhr.then(function(value){
+            //处理请求成功的『响应体』
+            console.log('请求成功');
+            console.log(JSON.parse(value));
+        }, function(reason){
+            //处理失败的『响应状态码』
+            console.log('请求失败');
+            console.log("失败的状态码为"+reason)
+        })
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基本使用</title>
+</head>
+
+<body>
+
+    <script>
+        // 2s后 随机生成一个数字  
+        // 如果是数字为 6 表示成功 (控制台输出『中奖啦』)
+        // 如果数字不是 6 表示失败 (控制台输出『再接再厉』)
+
+        function rand(m, n) {
+            return Math.ceil(Math.random() * (n - m + 1)) + m - 1;
+        }
+
+        //之前的方式
+        // setTimeout(()=>{
+        //     //生成一个从 1 - 10 的随机数
+        //     let n = rand(1, 10);
+        //     if(n === 6){
+        //         console.log("中奖啦, 恭喜获取劳斯莱斯 10w 优惠券")
+        //     }else{
+        //         console.log("再接再厉!");
+        //     }
+        // }, 1000);
+        
+        //promise 形式
+        // Promise 是构造函数
+        // 实例化接受一个函数类型的参数. (这个函数有两个形参 resolve(解决), reject(拒绝))
+        // 在这个函数内部封装异步操作
+        // resolve 和 reject 函数可以改变 promise 对象的状态, 并且可以设置其成功和失败的结果值(promiseValue)
+        let p = new Promise(function(resolve, reject){
+            //异步代码
+            setTimeout(()=>{
+                let n = rand(1,10);
+                if(n === 6){
+                    //表示中奖啦 (成功)
+                    resolve(n);// resolve 函数可以修改 promise 对象的状态(PromiseStatus)为成功 (resolved)
+                }else{
+                    //表示没有中奖(失败)
+                    reject(n);// reject 函数可以修改 promise 对象的状态(PromiseStatus)为失败(rejected)
+                }
+            }, 500)
+        });
+
+        // console.log(p);
+
+        //promise 对象 then 方法
+        //接收两个参数, 一个为成功状态的回调, 一个为失败状态的回调
+        //形参名字潜规则, 成功为 value, 失败为 reason
+        p.then(function(value){
+            console.log('成功的值为'+value);
+            console.log("恭喜获得法拉利100w优惠券");
+        }, function(reason){
+            console.log('失败的值为'+reason);
+            console.log("再接再厉咯!!!");
+        });
+
+    </script>
+</body>
+
+</html>

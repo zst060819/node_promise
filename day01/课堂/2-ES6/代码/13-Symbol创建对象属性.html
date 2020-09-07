@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol 创建对象属性</title>
+</head>
+<body>
+    <script>
+        //1. 向对象中添加方法 up down
+        let game = {
+            name:'俄罗斯方块' 
+        };
+        
+        let methods = {
+            up: Symbol(),
+            down: Symbol()
+        };
+        // //通过下标的方式添加属性
+        game[methods.up] = function(){
+            console.log("向上移动");
+        }
+        game[methods.down] = function(){
+            console.log("向下移动");
+        }
+        game[methods.up]();
+
+        //2. 对象声明的时候 添加属性
+        // let game2 = {
+        //     name: '狼人杀',
+        //     //添加 Symbol 类型的方法
+        //     [Symbol('say')] : function(){
+        //         console.log("轮到 xx 发言")
+        //     },
+        //     //添加自爆功能
+        //     [Symbol('自爆')]: function(){
+        //         console.log("我自爆啦!!");
+        //     }
+        // }
+
+        // console.log(game2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0138)https://passport.tiancity.com/login?serviceid=01&fromurl=https%3A//member.tiancity.com/Reg/GameRegister/Common%3Ffrom%3Dkart%26skin%3Dkart -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width; maximum-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="robots" content="all">
+    <meta name="author" content="Tiancity-portal">
+    <meta name="Copyright" content="Tiancity">
+    <meta name="Description" content="世纪天成是高度成功的游戏运营平台，中国游戏用户最信赖游戏运行商之一。">
+    <meta name="Keywords"
+        content="世纪天成，天成,tiancity，邮通,网游,免费网游,跑跑卡丁车，卡丁车,跑跑,洛奇，反恐精英oline，CSOL,疯狂松鼠，EVE Online,EVE,网页游戏，页游，洛奇英雄传，风暴战区，会员中心，购卡充值，点卡，充值，天成积分，mabinogi,luoqi,hero,mabinogi hero，游戏平台，网吧欢乐行,论坛，客服中心，注册，找回密码，活动领奖">
+    <title>世纪天成通行证 - 登录</title>
+    <link rel="stylesheet" href="./resources/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="./resources/login.css">
+    <link rel="stylesheet" type="text/css" href="./resources/style.css">
+    <script src="./resources/jquery-1.7.2.min.js.下载"></script>
+    <script src="./resources/common-1.2.4.min.js.下载"></script>
+    <script src="./resources/login_head.js.下载"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="./resources/normalize.min(1).css">
+    <link rel="stylesheet" type="text/css" href="./resources/TcLoginStyle.css">
+</head>
+
+<body cz-shortcut-listen="true" style="">
+    <!-- start: ad -->
+    <script language="javascript" src="./resources/layout.aspx" charset="gb2312"></script><input type="hidden"
+        id="loginHeadBg" data-link="https://luoqi.tiancity.com/homepage/v3/index.html"
+        data-img="https://img17.tiancitycdn.com/images11/LexianAd/LineF/2019/12/03/201912031005483ac1bcea80b643a7af9bfb7570129c86.jpg"
+        data-color="#000" data-title="洛奇Mabinogi"><img src="./resources/layrnd.aspx" style="display:none;">
+    <!-- end: ad -->
+
+    <!-- start: header -->
+    <div id="header" class="header">
+        <div class="headerCon">
+            <a class="logo fl" href="http://www.tiancity.com/"></a>
+            <p class="slogan fl">游戏世纪乐享天成</p>
+        </div>
+    </div>
+    <!-- end: header -->
+    <!-- start: containerBox -->
+    <div class="containerBox">
+        <div id="TcLogin_Layer" style="display:block">
+            <div class="container clearfix">
+                <div class="aside">
+                    <h2>用 <span>天成账号管家</span> 扫二维码登录安全又方便</h2>
+                    <div class="qrcode"> <img src="./resources/GetQrCodeImage" alt=""> </div>
+                    <div class="btns"> <a href="https://sec.tiancity.com/homepage/" target="_blank"
+                            class="btn downloadBtn">安装天成管家</a> </div>
+                </div>
+                <div class="main">
+                    <h1>世纪天成用户登录<a href="javascript:" class="icon iconClose" style="display: none;">关闭</a></h1>
+                    <!-- 登录框 -->
+                    <div class="con loginBar fl">
+                        <div class="accountLogin">
+                            <ul class="loginNav">
+                                <li><a href="javascript:" class="on"><i class="icon iconPc"></i>密码登录</a></li>
+                                <li class="hide"><a href="javascript:" class="on"><i class="icon icoMax"></i>短信验证登录</a>
+                                </li>
+                                <li><a href="javascript:" class="btnNavOnekey"><i class="icon iconMobile"></i>一键登录</a>
+                                </li>
+                            </ul> <!-- 密码登录及验证 -->
+                            <form action="" method="post">
+                                <div class="loginForm" style="display: block">
+                                    <!-- 密码登录 -->
+                                    <ul>
+                                        <li><input type="text" placeholder="手机/邮箱/普通账号"></li>
+                                        <li><input type="password" placeholder="静态密码/动态密码"></li>
+                                        <li class="error hide" title=""><em></em></li>
+                                        <li class="changeLogin"> <a href="javascript:"><i class="icon iconMax2"></i></a>
+                                        </li>
+                                        <li class="btns"><button href="javascript:" class="btn loginBtn">登录</button></li>
+                                    </ul> <!-- 算数验证码 -->
+
+                                    <ul class="matrixVerify hide">
+                                        <li class="msg">请依次输入密保卡3个坐标上对应的数字：</li>
+                                        <li>
+                                            <p>B1</p>
+                                            <p>C3</p>
+                                            <p>E5</p>
+                                        </li>
+                                        <li><input type="text"><input type="text"><input type="text"></li>
+                                        <li class="error hide" title=""><em></em></li>
+                                        <li class="changeLogin"> <a href="javascript:"><i
+                                                    class="icon iconMax2"></i>短信验证登录</a> </li>
+                                        <li class="btns"> <a href="javascript:" class="w150 btn loginBtn">登录</a> <a
+                                                href="javascript:" class="w150 btn gary cancelBtn">取消</a> </li>
+                                    </ul> <!-- 短信验证码 -->
+                                    <ul class="phoneVerify hide">
+                                        <li class="msg">请填写手机收到的验证码：</li>
+                                        <li class="phoneInfo">
+                                            <p></p> <a href="javascript:" class="getPsw">免费获取验证码</a>
+                                        </li>
+                                        <li><input type="text" placeholder="手机/邮箱/普通账号"></li>
+                                        <li class="error hide" title=""><em></em></li>
+                                        <li class="changeLogin"> <a href="javascript:"><i
+                                                    class="icon iconMax2"></i>短信验证登录</a> </li>
+                                        <li class="btns"> <a href="javascript:" class="w150 btn loginBtn">登录</a> <a
+                                                href="javascript:" class="w150 btn gary cancelBtn">取消</a> </li>
+                                    </ul>
+                                    <div class="tips"> 没有账号？ <a href="javascript:"
+                                            class="registBtn">立即注册</a>&nbsp;|&nbsp;
+                                        <span style="cursor:pointer">无法登录？</span> </div>
+                                </div> <!-- 短信验证登录 -->
+                            </form>
+                            <div class="loginForm hiden">
+                                <ul>
+                                    <li><input type="text" name="account" placeholder="手机/邮箱/普通账号"></li>
+                                    <li> <input type="text" name="password" placeholder="输入6位验证码" class="psw"> <a href="javascript:"
+                                            class="getPsw">免费获取验证码</a> </li>
+                                    <li class="error hide"><em></em></li>
+                                    <li class="changeLogin"> <a href="javascript:"><i class="icon iconMax2"></i>密码登录</a>
+                                    </li>
+                                    <li class="btns"><button href="javascript:" class="btn loginBtn">登录</button></li>
+                                </ul> <!-- 算数验证码 -->
+                                <ul class="mathVerify hide">
+                                    <li class="msg">请输入验证码的计算结果：</li>
+                                    <li><input type="text" placeholder="请输入计算结果"></li>
+                                    <li class="client"> <img
+                                            src="https://passport.tiancity.com/login?serviceid=01&amp;fromurl=https%3A//member.tiancity.com/Reg/GameRegister/Common%3Ffrom%3Dkart%26skin%3Dkart"
+                                            width="80" height="30" border="0"> <span>看不清，<a
+                                                href="javascript:;">换一张？</a></span> </li>
+                                    <li class="error hide" title=""><em></em></li>
+                                    <li class="changeLogin"> <a href="javascript:"><i class="icon iconMax2"></i>密码登录</a>
+                                    </li>
+                                    <li class="btns"> <a href="javascript:" class="w150 btn loginBtn">登录</a> <a
+                                            href="javascript:" class="w150 btn gary cancelBtn">取消</a> </li>
+                                </ul>
+                                <div class="tips"> 没有账号？ <a href="javascript:" class="registBtn">立即注册</a>&nbsp;|&nbsp;
+                                    <span style="cursor:pointer">无法登录？</span> </div>
+                            </div> <!-- 一键登录 -->
+                            <div class="loginForm">
+                                <ul class="">
+                                    <li><input type="text" placeholder="绑定APP的手机/邮箱/普通账号"></li>
+                                    <li class="error hide"><em></em></li>
+                                    <li class="btns"><a href="javascript:" class="btn loginBtn">登录</a></li>
+                                </ul> <!-- 一键验证码 -->
+                                <ul class="oneKeyVerify hide">
+                                    <li><input type="text" placeholder="手机/邮箱/普通账号"></li>
+                                    <li class="loginCode">登陆确认码：<span></span></li>
+                                    <li class="error hide" title=""><em></em></li>
+                                    <li class="btns">
+                                        <!-- <a href="javascript:" class="w150 btn loginBtn">登录</a> --> <a
+                                            href="javascript:" class="w150 btn loginBtn wait">等待手机确认<em
+                                                class="w1"></em><em class="w2"></em><em class="w3"></em></a> <a
+                                            href="javascript:" class="w150 btn gary cancelBtn">取消</a> </li>
+                                </ul>
+                                <div class="tips"> 没有账号？ <a href="javascript:" class="registBtn">立即注册</a>&nbsp;|&nbsp;
+                                    <span style="cursor:pointer">无法登录？</span> </div>
+                            </div>
+                        </div>
+                        <div class="quickBar hide">
+                            <p class="menuBar"> <a href="javascript:" class="backBtn">&lt; 返回登录</a> </p>
+                            <p class="msg">您无法登录可能有多种原因，请参考下方的方法和可能的解决方案。</p>
+                            <ul class="clearfix">
+                                <li> <a href="https://aq.tiancity.com/Pwd/ForgotPwd" target="_blank"> <i
+                                            class="btnIcon btnIcon-1"></i>
+                                        <p>忘记密码</p>
+                                    </a> </li>
+                                <li> <a href="https://aq.tiancity.com/Account/GetAccount" target="_blank"> <i
+                                            class="btnIcon btnIcon-2"></i>
+                                        <p>忘记账号</p>
+                                    </a> </li>
+                                <li> <a href="https://aq.tiancity.com/Home/Index" target="_blank"> <i
+                                            class="btnIcon btnIcon-3"></i>
+                                        <p>安全工具</p>
+                                    </a> </li>
+                                <li> <a href="https://aq.tiancity.com/Tool/PhoneSmsChange" target="_blank"> <i
+                                            class="btnIcon btnIcon-4"></i>
+                                        <p>手机号不用</p>
+                                    </a> </li>
+                                <li class="mr0"> <a href="https://member.tiancity.com/MemberOrder/wn?ot=10005"
+                                        target="_blank"> <i class="btnIcon btnIcon-5"></i>
+                                        <p>手机号丢失</p>
+                                    </a> </li>
+                            </ul>
+                            <p class="tips">都不是我的问题，<a href="https://help.tiancity.com/Home/Chat"
+                                    target="_blank">联系在线客服</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div><a href="https://luoqi.tiancity.com/homepage/v3/index.html" target="_blank" class="loginHead"
+                style="background-image:url(https://img17.tiancitycdn.com/images11/LexianAd/LineF/2019/12/03/201912031005483ac1bcea80b643a7af9bfb7570129c86.jpg);background-color:#000"
+                title="洛奇Mabinogi"></a>
+        </div>
+    </div>
+    <div id="footer" class="footer">
+        <script src="./resources/footer-utf8.js.下载"></script>
+        <style type="text/css">
+            ul,
+            li,
+            ol,
+            dl,
+            dd,
+            dt,
+            p,
+            img {
+                background: transparent;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                outline: 0
+            }
+
+            img {
+                vertical-align: top
+            }
+
+            ul,
+            ol {
+                list-style-type: none;
+                list-style-position: outside
+            }
+
+            .clearfix {
+                display: block
+            }
+
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                visibility: hidden;
+                clear: both
+            }
+
+            .clearfix {
+                zoom: 1
+            }
+
+            #footer_common {
+                width: 100%;
+                float: none;
+                clear: both;
+                font: 12px/1.67em verdana, arial, "宋体";
+                text-align: left
+            }
+
+            #footer_common .footwarp {
+                width: 980px;
+                margin: 0 auto;
+                color: #666;
+                font-size: 12px;
+                margin: 0 auto;
+                padding-top: 10px
+            }
+
+            #footer_common .footwarp a {
+                color: #666;
+                text-decoration: none
+            }
+
+            #footer_common .footnav {
+                background: #fbfbfb;
+                border-top: 1px solid #e2e0e3;
+                border-bottom: 1px solid #e2e0e3;
+                height: 14px;
+                line-height: 14px;
+                padding: 5px 0 5px 0;
+                text-align: center
+            }
+
+            #footer_common .footnav li {
+                background: url(https://images.tiancity.com/images/portalv3/images/service_span_bg.gif) no-repeat 100% 50%;
+                display: inline;
+                padding: 0 20px 0 16px
+            }
+
+            #footer_common .footnav li.nobg {
+                background: none
+            }
+
+            #footer_common .footcopy {
+                padding: 10px 15px
+            }
+
+            #footer_common .copy_info {
+                float: left;
+                display: inline;
+                width: 630px;
+                overflow: hidden
+            }
+
+            #footer_common .copy_info p span {
+                -webkit-text-size-adjust: none;
+                font-size: 9px;
+                font-family: Arial, Helvetica, sans-serif
+            }
+
+            #footer_common .copy_standard {
+                float: right;
+                display: inline;
+                width: 320px
+            }
+
+            #footer_common .copy_standard li {
+                vertical-align: middle;
+                display: block;
+                float: left;
+                margin-left: 10px
+            }
+
+            #footer_common .copy_standard li.copt01 {
+                padding-top: 5px
+            }
+
+            #footer_common .copy_standard li.copt02 {
+                padding-top: 12px
+            }
+        </style>
+        <div id="footer_common">
+            <div class="footwarp">
+                <div class="footcopy clearfix">
+                    <div class="copy_info">
+                        <p>网络实名：世纪天成 | 上海邮通科技有限公司 版权所有 | 24小时客户热线：021-34144567<br>上海市徐汇区钦州北路1066号74号楼3楼. 邮编：200233
+                            <br><span>Copyright © 2017 Shanghai Posts &amp; Telecommunications Technology
+                                CO.,LTD.</span></p>
+                    </div>
+                    <div class="copy_standard">
+                        <ul>
+                            <li class="copt01"><a href="http://www.zx110.org/" target="_blank" title="网络社会征信网"><img
+                                        src="./resources/icp_zxw.gif" alt="网络社会征信网" width="114" height="50"></a></li>
+                            <li class="copt02"></li>
+                            <li><a href="https://img1.tiancitycdn.com/common/images/tiancity_www2013.jpg"
+                                    target="_blank" title="沪网文[2019]0896-066">沪网文[2019]0896-066</a><br><a
+                                    href="https://images.tiancity.com/include/portalv3/images/tiancityIcp.jpg"
+                                    target="_blank" title="沪ICP证B2-20040070">沪ICP证B2-20040070</a><br><a
+                                    href="https://images.tiancity.com/include/portalv3/images/xcwz017.jpg"
+                                    target="_blank" title="新出网证(沪)字017号">新出网证(沪)字017号</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        LoginLayer.Login({ siteid: 9999, view: ".containerBox", compatiblemobile: false, callback: function () { window.location.reload(); } });
+    </script>
+
+
+</body>
+
+</html>

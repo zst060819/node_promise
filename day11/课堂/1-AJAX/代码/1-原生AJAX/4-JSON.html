@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="page-header">
+            响应 JSON
+        </h2>
+        <button id="btn" class="btn btn-danger btn-sm">点击发送 AJAX 请求</button>
+        <button id="btn2" class="btn btn-danger btn-sm">点击发送 AJAX 请求</button>
+
+        <h3 id="author"></h3>
+        <p id="content"></p>
+    </div>
+</body>
+
+<script>
+    const btn = document.getElementById('btn');
+    const btn2 = document.getElementById('btn2');
+    const author = document.getElementById('author');
+    const content = document.getElementById('content');
+
+    btn.onclick = function(){
+        const x = new XMLHttpRequest();
+
+        x.open('GET','/json-server');
+
+        x.send();
+
+        x.onreadystatechange = function(){
+            if(x.readyState === 4){
+                if(x.status >= 200 && x.status < 300){
+                    //输出服务器返回的响应体
+                    console.log(x.response);
+                    //解析数据
+                    const data = JSON.parse(x.response);
+                    //设置标签的文本
+                    author.innerHTML = data.creator;
+                    content.innerHTML = data.hitokoto;
+                }
+            }
+        }
+    }
+
+    btn2.onclick = function(){
+        const x = new XMLHttpRequest();
+
+        x.open('GET','/json-server-2');
+
+        x.send();
+
+        x.onreadystatechange = function(){
+            if(x.readyState === 4){
+                if(x.status >= 200 && x.status < 300){
+                    //输出服务器返回的响应体
+                    console.log(x.response);
+                    //解析数据
+                    const data = JSON.parse(x.response);
+                    console.log(data);
+                }
+            }
+        }
+    }
+</script>
+</html>

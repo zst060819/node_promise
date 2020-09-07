@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象继承 </title>
+</head>
+
+<body>
+    <script>
+        // get 和 set   Object.create Object.defineProperties(obj, {price: {set}})
+        class Phone{
+            //gettor 获取器函数
+            get price(){
+                return 200;
+            }
+
+            //settor 设置
+            set price(newValue){
+                console.log("price 属性被设置了!!");
+            }
+
+            //函数对象属性的get和set控制
+            static get color(){
+                return 'red';
+            }
+
+            static set color(val){
+                console.log("color 属性被设置了!!");
+            }
+        }
+
+        let s = new Phone();
+
+        // console.log(s.price);
+        // s.price = 2000;
+
+        // console.log(Phone.color);
+        Phone.color = "black";
+
+    </script>
+</body>
+
+</html>

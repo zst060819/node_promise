@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义遍历数据</title>
+</head>
+
+<body>
+    <script>
+        //对象
+        let banji = {
+            name: '三年二班',
+            stus:[
+                'xiaoming',
+                'xiaoning',
+                'knight',
+                'xiaotian'
+            ],
+            //添加迭代器属性
+            [Symbol.iterator]: function(){
+                //当前遍历的下标
+                let index = 0;
+                // let _this = this;
+                return {
+                    next: () => {
+                        //如果下标小于数组长度
+                        if(index < this.stus.length){
+                            //拼接数据
+                            let data = {value: this.stus[index], done: false};
+                            index++;
+                            //返回数据
+                            return data;
+                        }else{
+                            return {value: undefined, done: true};
+                        }
+                        // {value: "猪八戒", done: false}
+                        // {value: "猪八戒", done: true}
+                    }
+                };
+            }
+        };
+
+        //使用 for...of 遍历
+        for(let v of banji) {
+            console.log(v);// xiaoming  xiaoning knight xiaotian
+        }
+
+
+    </script>
+</body>
+
+</html>

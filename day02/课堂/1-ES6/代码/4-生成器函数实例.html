@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成器函数</title>
+</head>
+<body>
+    <script>
+        //模拟获取  用户数据  文章数据  商品数据 
+        function getUsers(){
+            setTimeout(()=>{
+                let data = "用户数据";
+                iterator.next(data);
+            }, 1000);
+        }    
+
+        function getArticles(){
+            setTimeout(()=>{
+                let data = "文章数据";
+                iterator.next(data);
+            }, 1000);
+        }    
+
+        function getGoods(){
+            setTimeout(()=>{
+                let data = '商品数据';
+                iterator.next(data);
+            }, 1000);
+        }
+
+        //声明一个生成器函数
+        function * gen(){
+            //获取用户数据
+            let users = yield getUsers();
+            console.log(users);
+            //获取文章数据
+            let articles = yield getArticles();
+            console.log(articles);
+            //获取商品数据
+            let goods = yield getGoods();
+            console.log(goods);
+        }
+
+        //调用生成器函数
+        let iterator = gen();
+        iterator.next();
+
+
+    </script>
+</body>
+</html>

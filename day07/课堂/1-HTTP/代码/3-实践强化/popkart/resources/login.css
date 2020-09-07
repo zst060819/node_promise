@@ -1,0 +1,11 @@
+body{background: #fff!important}
+.header{height:90px;width:100%; background:url(https://img2.tiancitycdn.com/portal/passport/share/images/login/header_bg.jpg) repeat-x scroll 0 0;}
+.header .headerCon{width:1230px;height:90px;margin:0 auto;}
+.header .logo{background:url(https://img2.tiancitycdn.com/portal/passport/share/images/w_logo.jpg) no-repeat;width:150px;height:50px;overflow:hidden;text-indent:-999em;margin:15px 0 0 16px;}
+.header .slogan{background:url(https://img2.tiancitycdn.com/portal/passport/share/images/bg.png) no-repeat 0 -120px;text-indent:-999em;width:170px;height:50px;overflow:hidden;margin:15px 0 0 20px;}
+
+.containerBox{min-width:1230px;overflow: hidden; width:100%; height:510px;position: relative}
+.containerBox .loginHead {width:100%;height:510px;position: absolute;top:0;left:0;background-repeat: no-repeat;background-position: 50% 0;z-index:1;}
+.containerBox .container {position: absolute;top:70px;left:50%;z-index:3;}
+.containerBox .container .iconClose{display: none}
+.footer{width:100%;padding:20px 0;}

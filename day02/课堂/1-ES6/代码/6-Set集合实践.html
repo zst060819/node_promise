@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实践</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1,2,3,4,5,4,3,2,1];
+        //1. 数组去重
+        // let newArr = [...new Set(arr)];
+        // console.log(newArr);
+        //2. 交集
+        let arr2 = [3,4,5,5,4,3,6,7,8];
+
+        // let inter = [...new Set(arr)].filter(function(item){
+        //     //使用目标数组创建一个集合
+        //     let s = new Set(arr2);
+        //     //检测该集合中是否包含目标元素 item
+        //     return s.has(item);
+        // });
+        //简化写法
+        // let inter = [...new Set(arr)].filter(item => (new Set(arr2)).has(item))
+
+        //3. 并集
+        // let union = [...new Set([...arr, ...arr2])];
+        // console.log(union);
+        
+        //4. 差集
+        // let diff = [...new Set(arr)].filter(function(item){
+        //     let s2 = new Set(arr2);
+        //     //判断 item 是否存在与 s2 中, 如果不存在则表示该元素为差集的一个值
+        //     if(s2.has(item)){
+        //         return false;
+        //     }else{
+        //         return true;
+        //     }
+        // });
+
+        //简化
+        let diff = [...new Set(arr)].filter(item => !((new Set(arr2)).has(item)))
+
+        console.log(diff);
+        
+    </script>
+</body>
+
+</html>

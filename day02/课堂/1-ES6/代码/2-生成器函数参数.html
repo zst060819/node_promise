@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成器函数参数</title>
+</head>
+<body>
+    <script>
+        function * gen(arg){
+            console.log(arg);
+            //yield 的语句有返回结果, 返回结果由下一个 next 方法的实参决定
+            let res1 = yield 111;
+            console.log(res1);
+            let res2 = yield 222;
+            console.log(res2);
+            let res3 = yield 333;
+            console.log(res3);
+        }
+
+        //获取迭代器对象
+        let iterator = gen('AAA');
+        console.log(iterator.next());
+        console.log(iterator.next('BBB'));// 
+        console.log(iterator.next('CCC'));// 
+        console.log(iterator.next('DDD'));// 
+
+        //使用 for...of 结构遍历
+        // for(let v of gen()){
+        //     console.log(v);
+        // }
+
+    </script>
+</body>
+</html>

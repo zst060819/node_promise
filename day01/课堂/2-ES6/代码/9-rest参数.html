@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rest参数</title>
+</head>
+<body>
+    <script>
+        // ES6 引入 rest 参数，用于获取函数的实参，用来代替 arguments
+        // ES5 对于不定个数参数的处理方式
+        // function add(){
+        //     let total = 0;
+        //     for(var i=0;i<arguments.length;i++){
+        //         total += arguments[i];
+        //     }
+        //     return total;
+        // }
+
+        // ES6 rest 参数的数据类型是个 『数组』
+        // function add(...args){
+        //     // console.log(args); // Array
+        //     // console.log(arguments); // 不是一个数组 是一个对象
+        //     let total = 0;
+        //     args.forEach(v => {
+        //         total += v;
+        //     });
+        //     return total;
+        // }
+
+        //不定个数参数
+        // let result = add(1,2,3,4,5,6);
+        // console.log(result);
+
+        // rest 参数的注意事项. rest 参数必须放在参数的最后
+        function add(a,b,...args) {
+            console.log(a);
+            console.log(b);
+            console.log(args);
+        }
+        add(1,2,3,4,5,6);
+
+    </script>
+</body>
+</html>

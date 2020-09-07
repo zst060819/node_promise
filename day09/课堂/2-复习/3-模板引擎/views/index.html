@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <style>
+        #ad{
+            height:50px;
+            background:#eaf;
+        }
+    </style>
+</head>
+<body>
+    <h2><%= h2 %></h2>
+    <ul>
+        <% for(let i=0;i<names.length;i++){ %>
+            <li><%= names[i] %></li>
+        <% } %>
+    </ul>
+    <% if(!isVip){ %>
+    <div id="ad">广告哦!!</div>
+    <% } %>
+</body>
+</html>

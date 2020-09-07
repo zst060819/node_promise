@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise的API</title>
+</head>
+
+<body>
+
+    <script>
+        /**
+         * 1. Promise 的实例化接收一个 函数类型的参数( 执行器函数 )
+         * 2. resolve和 reject 两个形参类型都是 函数.
+         * 3. 执行器函数是一个同步的回调函数
+         */
+        const p = new Promise(function (resolve, reject) {
+            // console.log(111);
+            //封装异步任务(同步任务)
+            setTimeout(() => {
+                resolve('成功的数据');
+                // reject("失败啦!!");
+                // console.log('000');
+            }, 1000);
+            // console.log(222);
+        });
+        // console.log(333);
+
+        //then 方法  Promise.prototype.then
+        // const result = p.then(function(value){
+        //     console.log(value);
+        // }, function(reason){
+        //     console.warn(reason);
+        // });
+
+        //catch 方法  Promise.prototype.catch
+        // const result = p.catch(function(reason){
+        //     console.log(reason);
+        // });
+        // console.log(result);
+
+        //Promise.resolve 方法返回一个 promise 对象
+        //如果传入的值是非 Promise 对象, 则resolve方法的返回结果是 『成功的Promise对象』
+        //如果传入的参数是 Promise 对象, 则该参数决定了 resolve 返回对象的状态与值.
+        // var p2 = Promise.resolve(521);
+        // var p2 = Promise.resolve(false);
+        // var p2 = Promise.resolve();
+        // var p2 = Promise.resolve([1,2,3]);
+        // const param = new Promise((resolve, reject)=>{
+        //     // resolve('成功');
+        //     // reject('失败啦!');
+        // });
+        // var p2 = Promise.resolve(param);
+        // var p2 = Promise.resolve(Promise.resolve('用户数据'));
+
+        //Promise.reject 返回一个失败的 Promise 对象
+        // var p3 = Promise.reject(123);
+        // var p3 = Promise.reject('abc');
+        // var p3 = Promise.reject(Promise.resolve('用户数据'));
+
+        //Promise.all 返回的结果是 Promise 对象
+        // 参数是一个 Promise 对象数组
+        const one = new Promise((resolve, reject) => {
+            // resolve('评论数据');
+            setTimeout(() => {
+                reject('网络错误');
+            }, 1000);
+        });
+        const two = Promise.resolve('用户数据');
+        const three = Promise.resolve('订单数据');
+        var p4 = Promise.all([one, two, three]);
+
+        //Promise.race 返回的结果是 Promise 对象  race 赛跑
+        var p5 = Promise.race([one, two, three]);
+
+        console.log(p5);
+
+    </script>
+</body>
+
+</html>

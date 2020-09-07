@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST请求</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2 class="page-header">
+            POST 请求
+        </h2>
+        <button id="btn" class="btn btn-warning btn-sm">点击发送AJAX POST 请求</button>
+    </div>
+    <script>
+        const btn = document.querySelector('#btn')
+
+        btn.addEventListener('click', function(){
+            //
+            const x = new XMLHttpRequest();
+
+            //初始化
+            x.open('POST', '/post-server');
+
+            //『设置请求头信息』
+            x.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+            x.setRequestHeader("name","h5200422");
+
+            //发送 添加参数
+            x.send("username=admin&password=admin");
+
+            //绑定事件
+            x.onreadystatechange = function(){
+                if(x.readyState === 4 ){
+                    if(x.status >= 200 && x.status < 300){
+                        //打印响应体
+                        console.log(x.response);
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
